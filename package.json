@@ -1,0 +1,22 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is react from Scratch course paractice + notes;",
+  "main": "Index.js",
+  "scripts": {
+    "test": "just for test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chetan51423/React_NamasteReact.git"
+  },
+  "author": "Chetan Shinde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chetan51423/React_NamasteReact/issues"
+  },
+  "homepage": "https://github.com/Chetan51423/React_NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
