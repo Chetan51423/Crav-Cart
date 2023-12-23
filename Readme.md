@@ -41,7 +41,7 @@ ex:- webpack (it is for production tready apps)
 -> npm install -D parcel
 
 4) commands to install pacel package
--> npm install -D parcel             --> -D show for dev dependency. we are not installing it for production instead we want parcel only on our machine.
+-> npm install -D parcel       --> -D show for dev dependency. we are not installing it for production instead we want parcel only on our machine.
 -> npm install --save-dev parcel     --> both are same things
 
 5) dependency 
@@ -67,12 +67,15 @@ ex:- webpack (it is for production tready apps)
 -> it has all the sub packages / dependencies that out parcel will require
 
 
-note: aapalyala app create/ run karayla kahi packages lagnaar aahet (like parcel) --> te nanter dependencies madhe mojle jatat. kadhi kadhi asa hote ki tya dependencies la pan dusrya dependencies ver nirbhar rahav lagte. ter tya sarva dependencies chi info aapalya package-lock.jsom madhe dili aste. aani tyachya related packages node modules store kele astat. package-lock.jsom madhe enough information dili aste ki te purna node module ch folder create karu shakte 
+Note👉👉: 
+aapalyala app create/ run karayla kahi packages lagnaar aahet (like parcel) --> te nanter dependencies madhe mojle jatat. kadhi kadhi asa hote ki tya dependencies la pan dusrya dependencies ver nirbhar rahav lagte. ter tya sarva dependencies chi info aapalya package-lock.jsom madhe dili aste. aani tyachya related packages node modules store kele astat. package-lock.jsom madhe enough information dili aste ki te purna node module ch folder create karu shakte 
 
 
-note2: we should not add node modules to our gitignore because it is too heavy.  
+Note2👉👉
+: we should not add node modules to our gitignore because it is too heavy.  
 
-note3: the question arises here is then if we push our app to github or on server and you said ki we need not to push node module folders to it then how can our app will work?
+Node3👉👉
+: the question arises here is then if we push our app to github or on server and you said ki we need not to push node module folders to it then how can our app will work?
 --> the ans is our package-lock.json --> it is responsible to regenerate whole node package module on web itself. 
 -> we need not to push node modules folders to git and further package-lock.json will create itself.
 
