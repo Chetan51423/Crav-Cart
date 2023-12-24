@@ -189,3 +189,35 @@ to remove console logs
 #Lecture 3
 (core concepts of react #babel, #jsx, #many-more)
 
+👉untill now we were using React.createElement("tag_name", {key}, "innerHTML").
+-> And the motive of react was to write html using js but in easy way.
+-> But always using React.createElement() for creating html tags was so ugly.
+-> this is even worst when we need to creted multiple tags inside a single tag.
+😍 So to tackle this facebook developer develop JSX
+
+1) what is JSX
+👉 JSX is HTML like Syntax use to create html element in js code.
+-> jsx is not HTML inside JS
+-> but it is HTML like syntax inside js
+-> there are slight differences in syntax
+
+H.W
+-> how to create img tag inside html
+-> 
+
+2) Howdoes React.createElement() executed  ?
+👉 React.createElement() -> return a object
+-> that object is then rendered on virtual dom using ReactDOM.render(object, location);
+-> React.createElement() ==> object ==> render on HTML DOM ==> js engine creates execution context ==> renders on webpage
+
+3) How JSX works ?
+👉 our browser do not understand JSX
+-> browsers acn only understand javascript
+-> babel is the one which helps to execute JSX
+-> babel is compile for modern javascript
+-> behind the seen babel converts the JSX code and executes it
+-> babel uses React.createElement() to create new elements.
+-> inshort execution of JSX works like this
+⭐JSX ==> React.createElement() => object ==> HTML dom⭐ 
+
+
