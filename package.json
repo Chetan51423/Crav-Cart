@@ -4,6 +4,8 @@
   "description": "This is react from Scratch course paractice + notes;",
   "main": "Index.js",
   "scripts": {
+    "start": "parcel Index.html",
+    "build": "parcel build Index.html",
     "test": "just for test"
   },
   "repository": {
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/Chetan51423/React_NamasteReact#readme",
   "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.10.3",
     "process": "^0.11.10"
   },
@@ -24,9 +28,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "browserslist":[
-    "last 2 Chrome versions" 
+  "browserslist": [
+    "last 2 Chrome versions"
   ]
-    
-  
 }

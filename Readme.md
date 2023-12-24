@@ -174,6 +174,16 @@ all of then work together in cordination to run react app
 "build": "parcel build Index.html"}
 -> now we can use command like ⭐npm run start / npm start and npm run build / npm build⭐
 
+17) How can we remove console logs from project
+-> parcel do not remove console logs by itself
+-> we have to add babel plugin and the configure it 
+to remove console logs
+-> for that we have to go to *babel-plugin-transform-remove-console*
+-> and then isatall the package using *npm install babel-plugin-transform-remove-console --save-dev / -D* command to install the package
+-> we can see it inside node modules and package-lock.json
+-> next step is to configure that plugin by creating the .babelrc file and add the specification there from the website.
+-> .babelrc is configuration file for babel plugins
+
 =======================================================================================================
 
 #Lecture 3
