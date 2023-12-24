@@ -148,6 +148,12 @@ all of then work together in cordination to run react app
 👉 It is is the dependency in package.json 
 -> it specifies the the version and the type of browser our code must work.
 -> if we are specifying specifying any specific version and browser name it wont' mean that it will only work in that browser and do not work in other. it will work in other browsers but some function will not work.
+
+14) what is a polyfill
+👉 this concept is related to the code compatibility of older browsers
+-> some our app code won't work in older browsers.
+-> so to make our app run in older version of browsers we use babel created some code with similar functionality to the code which browser do not support
+-> the converted code is called ⭐Polyfill⭐
 ->
 
 =======================================================================================================
