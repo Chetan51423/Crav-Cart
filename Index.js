@@ -9,7 +9,18 @@ import ReactDOM from "react-dom/client"
 
 
 //Creating elemets using JSX
-const heading = (<h1 id="container">Hello from JSX and babel</h1>)    // called as JSX Expression
+const heading = (<h1 id="container">Hello from JSX and babel in react element</h1>);    // called as JSX Expression
 
+const Heading3 =()=>
+{
+    return (
+        <div>
+            {heading}
+            <h1>Namaste from functional component</h1>
+            <h2>This is second h2 tag inside funct. component</h2>
+        </div>
+        
+    );
+}
 const root2 = ReactDOM.createRoot(document.getElementById('root'));
-root2.render(heading);
+root2.render(<Heading3/>);

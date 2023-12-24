@@ -220,4 +220,28 @@ H.W
 -> inshort execution of JSX works like this
 ⭐JSX ==> React.createElement() => object ==> HTML dom⭐ 
 
+🏅🏆 JSX is so powerfull
+-> it do js code sanitijation
+-> means it only use the secure code comming in form of js
+-> it made easy to write react elemet inside functioanl component
+-> it also can write another funct. component to current functional component
+
+4) Components in React
+⭐Functional components
+⭐Class base components
+
+⭐Functional components 
+-> They are normal function expression who have JSX inside them
+-> there are many methods to execute them
+-> functional components can be created using an arrow function and JSX written inside them
+-> we have write JSX code inside * (); *
+-> render method only renders the react element and JSX
+-> if we wants to render our functional component which is nothing but the function expression having JSX inside we have ro write it in JSX syntax --> *<function_comp_name/>*
+
+🔥how to write react element inside finctional component
+-> use *{.....}*  to mention the react elemet
+
+🔥how to write another functional component inside other functional component
+-> use jsx syntax *<..../>* 
+
 
