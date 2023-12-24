@@ -154,7 +154,25 @@ all of then work together in cordination to run react app
 -> some our app code won't work in older browsers.
 -> so to make our app run in older version of browsers we use babel created some code with similar functionality to the code which browser do not support
 -> the converted code is called ⭐Polyfill⭐
-->
+-> babel do automatically for us
+
+15) What is Tree Shaking 
+👉 it means ⭐Removing unwanted code⭐
+-> parcel removes the unwanted code that libraries bring with them and uses only the important one.
+
+
+16) what is npx
+👉 npx = execute the commmand without downloading the package;
+-> npx = npm run
+-> npx parcel index.html   -> command to run app
+-> npm run parcel index.html -> we can use it instead npx
+
+😂Easy way to run out app
+-> we can directly run out script from package.json'
+-> we can add commands inside script that can use ulternative to npx command 
+-> inside scripts:{ "start":"parcel index.html"
+"build": "parcel build Index.html"}
+-> now we can use command like ⭐npm run start / npm start and npm run build / npm build⭐
 
 =======================================================================================================
 
