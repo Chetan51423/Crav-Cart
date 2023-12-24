@@ -46,6 +46,9 @@ ex:- webpack (it is for production tready apps)
 
 5) dependency 
 -> it means the packages our project depend on.
+->there are different types of dependencies (1) dependencies (2) devdependencies
+-> dev-dependencies is limited to development side 
+-> and dependencies are use globally like react.
 
 6) caret (^) and tilde (~) in package.json
 -> it is use befor the version of dependencies
@@ -97,10 +100,46 @@ npm commands:
 -> npm install react     -> download react packages
 -> npm install react-dom -> -"-  react-dom packages
 
-note: we wants react globally so that's wht we are not using "(-D)" here.
+NOde👉👉:
+ we wants react globally so that's wht we are not using "(-D)" here.
 
 
 10) igniting our react app
 command:-> npx parcel index.html
 -> npx ---> it means execute using npm
 -> entery point --> index.html 
+
+11) Functions of Parcel / How our react App works and how all things goes behind the seen
+-> when we ignite our react app tgere is lot mantyy things are working together to make our react app run!
+In background we have
+-> dev-dependencies
+-> dependencies
+-> node modules
+-> parcel and many more.
+
+all of then work together in cordination to run react app
+
+👉 HMR - hot module reload -> whenever we save our code file in vsc we can see the change in app as sson as we save code files. this is done with the help of HMR which is present in parcel.
+👉 File watcher Algorithm --> written in c++ --> is continuously watching/monitoring files and if any change happens it reflects it instantly.
+👉 Bundling --> done by parcel
+👉 cleaning our code  --> done by parcel
+👉 dev and production build  
+(these are the two types of building our app with parcel. dev build require less time as compaired to production builds. the seen is everything is dependent on files and minification of files done by parcel.)
+👉 super fast build algorithm
+👉 image optimzation. --> images / media take the larges time to reload. Parcel is so pwerful that it optimize images / media also.
+👉 caching while developing. --> it is an important concept while dveloping / building our react app. When we build our app using parcel for the first tieme it take more time as compaired when we build it subsequent times. this is beacuse first time parcel have to go through all files which is time consuming. to prevent that parcel create its own folder to save the caching data. using that data parcel can build the next react app in less time. 👉this is the concept.
+👉compression:->
+👉Compatible with older version of browser
+👉HTTPS on dev
+👉port number
+👉consistent hashing algorithms
+👉zero configuration
+
+
+12) Transitive dependencies? what are they ?
+👉react app is so fast
+-> to make that app fast it requires numbers of dependencies
+-> that dependencies may depend on another dependencies
+-> the the chain goes on 
+-> this dependency chaining is called as transitive dependencies
+
