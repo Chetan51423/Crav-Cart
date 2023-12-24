@@ -143,3 +143,15 @@ all of then work together in cordination to run react app
 -> the the chain goes on 
 -> this dependency chaining is called as transitive dependencies
 
+
+13) What is a browserslist
+👉 It is is the dependency in package.json 
+-> it specifies the the version and the type of browser our code must work.
+-> if we are specifying specifying any specific version and browser name it wont' mean that it will only work in that browser and do not work in other. it will work in other browsers but some function will not work.
+->
+
+=======================================================================================================
+
+#Lecture 3
+(core concepts of react #babel, #jsx, #many-more)
+
