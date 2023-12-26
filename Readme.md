@@ -245,3 +245,17 @@ H.W
 -> use jsx syntax *<..../>* 
 
 
+summary:
+1) add script for running app without npx
+2) add script for build
+3) add browserlist and its description
+4) install plugin
+5) how to configure babelrc
+5) keys in reactelement / props
+6) JSX
+7) react element using jsx
+8) components 
+9) its syntax / styles
+10) how to use react eelemnt inside component
+11) how to render component
+
