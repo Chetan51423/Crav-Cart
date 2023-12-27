@@ -69,7 +69,7 @@ const Header = () =>
 const Website_title =()=>
 {
     return (
-        <h2 className="website_name">Aunty's kitchen</h2>
+        <h2 className="website_name">Aunty's Kitchen</h2>
     )
     
 }
@@ -84,20 +84,37 @@ const Body = () =>
             <RestaurantCard/>
             <RestaurantCard/>
             <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
         </div>
         
         </>
     )
 }
+const Restaurant=
+{
+    name:"Burger King",
+    image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jmfk6nhytgaifkox7rcf",
+    cusines:["Berger", "American"],
+    rating:"4.2"
+}
 const RestaurantCard =()=>
 {
     return (
         <div className="card">
-            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jmfk6nhytgaifkox7rcf" alt="card" />
+            <img src={Restaurant.image} alt="card" />
             <div className="cardData">
-                <h2>Burger King</h2>
-                <h3>Burgers, American</h3>
-                <h4>4.2⭐🔥</h4>
+                <h2>{Restaurant.name}</h2>
+                <h3>{Restaurant.cusines.join(", ")}</h3>
+                <h4>{Restaurant.rating}⭐🔥</h4>
                 <h4></h4>
             </div>
         </div>

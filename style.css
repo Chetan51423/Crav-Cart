@@ -5,8 +5,9 @@
 }
 .body_
 {
-    display: flex;
+    display:flex;
     justify-content:space-between;
+    flex-wrap: wrap;
 }
 .web_title
 {
@@ -37,7 +38,7 @@
     justify-content:space-between;
     align-items: center;
     padding: 30px;
-    border: 8px solid purple;
+    border: 8px solid blueviolet;
     border-radius: 100px;
 }
 .nav_links
@@ -62,7 +63,7 @@ a
 }
 .card
 {
-    border:3px solid black;
+    border:3px solid blueviolet;
     width: 312px;
     height: 371px;
     /* padding: 8px; */
