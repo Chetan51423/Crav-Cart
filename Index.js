@@ -30,19 +30,19 @@ import ReactDOM from "react-dom/client"
 
 // ================================== # This is Inline CSS in components / react====================================================
 
-const In_Line_CSS = ()=>
-{ 
-    return (
-        <div className="InLineCSS" style={
-            {
-                backgroundColor: "yellow",
-                color: "purple",
-                fontWeight:"500"
-            }
-        }><h2>This is inline CSS</h2></div>
-    )
+// const In_Line_CSS = ()=>
+// { 
+//     return (
+//         <div className="InLineCSS" style={
+//             {
+//                 backgroundColor: "yellow",
+//                 color: "purple",
+//                 fontWeight:"500"
+//             }
+//         }><h2>This is inline CSS</h2></div>
+//     )
     
-}
+// }
 
 // ==============================================================================================================
 const Header = () =>
@@ -115,7 +115,6 @@ const Applayout = ()=>
        <>
        <Header/>
        <Body/>
-       <In_Line_CSS/>
        <Footer/>
        </>
        

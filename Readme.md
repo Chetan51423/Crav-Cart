@@ -264,7 +264,7 @@ summary:
 
 # Lecture 5
 
-1) <h3>Components<h3>  
+1) <h3>Components</h3>  
 -> there are 2 types<br>
 -> functional and class base components<br>
 -> first letter should be capital 
@@ -274,4 +274,21 @@ summary:
 -> we can use any type of javascript inside component using {} brackets<br>
 -> react can render only one root element so make one parent component<br>
 -> we can create multiple child elements using component and use it inside the parent <br>
+
+
+2) <h3>Inline CSS</h3>
+-> like in HTML who we use inline CSS we can use it here</br>
+-> only difference is we have to use {} after style.  like style={{backgroundColor:"yellow",}}</br>
+-> we have to write css properties like objects in JS</br>
+-> properties name are also different while we use Inline css</br>
+-> normal (background-color:black)    ---> in jsx/component/ react   (backgroundCOlour:"black")</br>
+-> only difference is write words in camel casing type and write it who we write objects</br>
+
+3) <h3>React Fragments</h3>
+-> Inside components we can only have one parent element
+-> therefore we have to use unnecessary div to insure there will always be one parent element
+-> to avoid that react provides fragments
+-> we have to put our child elements inside it and now it will behave like one parent element
+-> syntax <fragments></fragments>   / <></>
+
 
