@@ -297,3 +297,10 @@ summary:
 -> then created the restaurand object which takes card details <br>
 -> then instead of static typing the data of restaurant inside card i am using restaurant object data inside it <br>
 -> the plan is to fetch lots of objects from api and then render them inside body by fetching each restaurant data.<br>
+
+5) <h3>DIfferent ways of passing Props</h3>
+-> we learnt 4 different way we can pass props
+-> inshort if we want to pass the data of any individual object we send it in form of props
+-> we can use any name like props as argument
+-> if we have multiple things to pass as props we can use {...} --> spread operator to do that
+-> 
