@@ -28,7 +28,23 @@ import ReactDOM from "react-dom/client"
 //     );
 // }
 
-// ======================================================================================
+// ================================== # This is Inline CSS in components / react====================================================
+
+const In_Line_CSS = ()=>
+{ 
+    return (
+        <div className="InLineCSS" style={
+            {
+                backgroundColor: "yellow",
+                color: "purple",
+                fontWeight:"500"
+            }
+        }><h2>This is inline CSS</h2></div>
+    )
+    
+}
+
+// ==============================================================================================================
 const Header = () =>
 {
     return  (
@@ -84,11 +100,13 @@ const Applayout = ()=>
             - links
             - cart
         body 
-         - card
-          - img
-          - restaurant name
-          - rating 
-          - reviews
+         - Search Bar
+         - RestaurantList
+            - cRestaurantard
+                - img
+                - restaurant name
+                - rating 
+                - reviews
         footer 
          - links
         */
@@ -97,6 +115,7 @@ const Applayout = ()=>
        <>
        <Header/>
        <Body/>
+       <In_Line_CSS/>
        <Footer/>
        </>
        
