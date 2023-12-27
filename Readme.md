@@ -246,16 +246,32 @@ H.W
 
 
 summary:
-1) add script for running app without npx
-2) add script for build
-3) add browserlist and its description
-4) install plugin
-5) how to configure babelrc
-5) keys in reactelement / props
-6) JSX
-7) react element using jsx
-8) components 
-9) its syntax / styles
-10) how to use react eelemnt inside component
-11) how to render component
+1) add script for running app without npx<br>
+2) add script for build<br>
+3) add browserlist and its description<br>
+4) install plugin<br>
+5) how to configure babelrc<br>
+5) keys in react element / props<br>
+6) JSX<br>
+7) react element using jsx<br>
+8) components <br>
+9) its syntax / styles<br>
+10) how to use react eelemnt inside component<br>
+11) how to render component<br>
+
+
+===========================================================================================================================================
+
+# Lecture 5
+
+1) <h3>Components<h3>  
+-> there are 2 types<br>
+-> functional and class base components<br>
+-> first letter should be capital 
+-> use <Component_name/><br>
+-> we can have only one element inside the component<br>
+-> to use multiple components use it inside React Fragments<br>
+-> we can use any type of javascript inside component using {} brackets<br>
+-> react can render only one root element so make one parent component<br>
+-> we can create multiple child elements using component and use it inside the parent <br>
 
