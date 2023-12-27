@@ -1,6 +1,6 @@
-                                             <h1>React Notes</h1>
+                                             
 
-Namaste react:
+# Namaste react
 
 lecture 2
 1) what changes do we need to make our app productionn ready?
@@ -139,57 +139,57 @@ all of then work together in cordination to run react app<br>
 👉zero configuration<br>
 
 
-12) Transitive dependencies? what are they ?<br<br>>
-👉react app is so fast<br<br>>
+12) Transitive dependencies? what are they ?<br>
+👉react app is so fast<br>
 -> to make that app fast it requires numbers of dependencies
--> that dependencies may depend on another dependencies<br<br>>
--> the the chain goes on <br<br>>
--> this dependency chaining is called as transitive dependencies<br<br>>
+-> that dependencies may depend on another dependencies<br>
+-> the the chain goes on <br>
+-> this dependency chaining is called as transitive dependencies<br>
 
 
-13) What is a browserslist<br<br>>
-👉 It is is the dependency in package.json <br<br>>
--> it specifies the the version and the type of browser our code must work.<br<br>>
--> if we are specifying specifying any specific version and browser name it wont' mean that it will only work in that browser and do not work in <br<br>>other. it will work in other browsers but some function will not work.<br<br>>
+13) What is a browserslist<br>
+👉 It is is the dependency in package.json <br>
+-> it specifies the the version and the type of browser our code must work.<br>
+-> if we are specifying specifying any specific version and browser name it wont' mean that it will only work in that browser and do not work in <br>other. it will work in other browsers but some function will not work.<br>
 
-14) what is a polyfill<br<br>>
-👉 this concept is related to the code compatibility of older browsers<br<br>>
--> some our app code won't work in older browsers.<br<br>>
--> so to make our app run in older version of browsers we use babel created some code with similar functionality to the code which browser do not support<br<br>>
--> the converted code is called ⭐Polyfill⭐<br<br>>
--> babel do automatically for us<br<br>>
+14) what is a polyfill<br>
+👉 this concept is related to the code compatibility of older browsers<br>
+-> some our app code won't work in older browsers.<br>
+-> so to make our app run in older version of browsers we use babel created some code with similar functionality to the code which browser do not support<br>
+-> the converted code is called ⭐Polyfill⭐<br>
+-> babel do automatically for us<br>
 
-15) What is Tree Shaking <br<br>>
-👉 it means ⭐Removing unwanted code⭐<br<br>>
--> parcel removes the unwanted code that libraries bring with them and uses only the important one.<br<br>>
+15) What is Tree Shaking <br>
+👉 it means ⭐Removing unwanted code⭐<br>
+-> parcel removes the unwanted code that libraries bring with them and uses only the important one.<br>
 
 
-16) what is npx<br<br>>
+16) what is npx<br>
 👉 npx = execute the commmand without downloading the package;
 -> npx = npm run<br<br>>
--> npx parcel index.html   -> command to run app<br<br>>
+-> npx parcel index.html   -> command to run app<br>
 -> npm run parcel index.html -> we can use it instead npx<br<br>>
 
-😂Easy way to run out app<br<br>>
--> we can directly run out script from package.json'<br<br>>
--> we can add commands inside script that can use ulternative to npx command <br<br>>
--> inside scripts:{ "start":"parcel index.html"<br<br>>
-"build": "parcel build Index.html"}<br<br>>
--> now we can use command like ⭐npm run start / npm start and npm run build / npm build⭐<br<br>>
+😂Easy way to run out app<br>
+-> we can directly run out script from package.json'<br>
+-> we can add commands inside script that can use ulternative to npx command <br>
+-> inside scripts:{ "start":"parcel index.html"<br>
+"build": "parcel build Index.html"}<br>
+-> now we can use command like ⭐npm run start / npm start and npm run build / npm build⭐<br>
 
-17) How can we remove console logs from project<br<br>>
--> parcel do not remove console logs by itself<br<br>>
--> we have to add babel plugin and the configure it <br<br>>
-to remove console logs<br<br>>
--> for that we have to go to *babel-plugin-transform-remove-console*<br<br>>
--> and then isatall the package using *npm install babel-plugin-transform-remove-console --save-dev / -D* command to install the package<br<br>>
--> we can see it inside node modules and package-lock.json<br<br>>
--> next step is to configure that plugin by creating the .babelrc file and add the specification there from the website.<br<br>>
--> .babelrc is configuration file for babel plugins<br<br>>
+17) How can we remove console logs from project<br>
+-> parcel do not remove console logs by itself<br>
+-> we have to add babel plugin and the configure it <br>
+to remove console logs<br>
+-> for that we have to go to *babel-plugin-transform-remove-console*<br>
+-> and then isatall the package using *npm install babel-plugin-transform-remove-console --save-dev / -D* command to install the package<br>
+-> we can see it inside node modules and package-lock.json<br>
+-> next step is to configure that plugin by creating the .babelrc file and add the specification there from the website.<br>
+-> .babelrc is configuration file for babel plugins<br>
 
 =======================================================================================================
 
-#Lecture 3<br>
+# Lecture 3<br>
 (core concepts of react #babel, #jsx, #many-more)
 
 👉untill now we were using React.createElement("tag_name", {key}, "innerHTML").<br>
