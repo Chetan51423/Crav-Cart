@@ -3,6 +3,11 @@
     background-color:rgb(225, 141, 30);
     
 }
+.body_
+{
+    display: flex;
+    justify-content:space-between;
+}
 .web_title
 {
     padding: 10px;
@@ -54,4 +59,25 @@ a
     /* padding: 20px; */
     height: 150px;
     width: 200px;
+}
+.card
+{
+    border:3px solid black;
+    width: 312px;
+    height: 371px;
+    /* padding: 8px; */
+    margin: 20px;
+    border-radius: 5%;
+    background-color: rgb(245, 245, 175);
+
+}
+.card>img
+{
+    width: 100%;
+    height: 208px;
+    border-radius: 5%;
+}
+.cardData
+{
+    padding: 10px;
 }

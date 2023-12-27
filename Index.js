@@ -77,12 +77,31 @@ const Website_title =()=>
 const Body = () =>
 {
     return (
-        <h1>This is body</h1>
+        <>
+        <div className="body_">
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+            <RestaurantCard/>
+        </div>
+        
+        </>
     )
 }
-const Card =()=>
+const RestaurantCard =()=>
 {
-    
+    return (
+        <div className="card">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jmfk6nhytgaifkox7rcf" alt="card" />
+            <div className="cardData">
+                <h2>Burger King</h2>
+                <h3>Burgers, American</h3>
+                <h4>4.2⭐🔥</h4>
+                <h4></h4>
+            </div>
+        </div>
+    )
 }
 
 const Footer = () =>

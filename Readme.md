@@ -285,10 +285,15 @@ summary:
 -> only difference is write words in camel casing type and write it who we write objects</br>
 
 3) <h3>React Fragments</h3>
--> Inside components we can only have one parent element
--> therefore we have to use unnecessary div to insure there will always be one parent element
--> to avoid that react provides fragments
--> we have to put our child elements inside it and now it will behave like one parent element
--> syntax <fragments></fragments>   / <></>
+-> Inside components we can only have one parent element<br>
+-> therefore we have to use unnecessary div to insure there will always be one parent element<br>
+-> to avoid that react provides fragments<br>
+-> we have to put our child elements inside it and now it will behave like one parent element<br>
+-> syntax <React.Fragments></React.Fragments>   / <></><br>
 
 
+4) <h3>Components Writting Juorney</h3>
+-> created a restaurant card components and simply use it multiple times in body<br>
+-> then created the restaurand object which takes card details <br>
+-> then instead of static typing the data of restaurant inside card i am using restaurant object data inside it <br>
+-> the plan is to fetch lots of objects from api and then render them inside body by fetching each restaurant data.<br>
