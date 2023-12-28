@@ -347,13 +347,14 @@ what should we put into config.js file and why do we need config file
 -> usestate provide us a function to change the state of local sgtate variable through it.
 -> whatever we write then will update in the local variable. 
 -> i.e setLocalVariableName
-<code>const [searchInput,setSearchInput] = useState("KFC");
-onChange ={(e)=>
-            {
-              // e.target.value;
-              setSearchInput(e.target.value)
+<code>
+   const [searchInput,setSearchInput] = useState("KFC");
+   onChange ={(e)=>
+               {
+               // e.target.value;
+               setSearchInput(e.target.value)
 
-            }}
+               }}
 </code>
 
 
