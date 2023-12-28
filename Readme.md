@@ -359,6 +359,19 @@ what should we put into config.js file and why do we need config file
    }
 
 ```
+![NOTE]
+> we can also write e.target.value without setSearchInput but this is not the write way 
+> now we can use searchInput as our local variable and we can use it anywhere in code 
+> This is called 2-way data binding
+> 2-way because we are reading and writting the adata at the same time .
+
+### How to create vriable in JS and React 
+```javascript
+const vstext = "hello"  // by default this variable is hello---> tjis is in javascript
+
+conat [searchText,setSearchText] = useState("hello")  // here by default hello is assign to react variable 
+
+```
 4) what is a state 
 ->
 
