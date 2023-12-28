@@ -1,8 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import Header from "./src/Components/Header"
-import Body from "./src/Components/Body1"
-import Footer from "./src/Components/Footer"
+import Header from "./Components/Header"
+import Body from "./Components/Body1"
+import Footer from "./Components/Footer"
 /*
 ==================================creating element using javascript===============================================================
 # creatingelements in react using React.createElement()

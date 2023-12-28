@@ -295,7 +295,7 @@ summary:
 -> syntax <React.Fragments></React.Fragments>   / <></><br>
 
 
-4) <h3>Components Writting Juorney</h3>
+4) <h3>Components Writting Journey</h3>
 -> created a restaurant card components and simply use it multiple times in body<br>
 -> then created the restaurand object which takes card details <br>
 -> then instead of static typing the data of restaurant inside card i am using restaurant object data inside it <br>
@@ -307,3 +307,57 @@ summary:
 -> we can use any name like props as argument<br>
 -> if we have multiple things to pass as props we can use {...} --> spread operator to do that<br>
 -> 
+
+
+<!-- ============================================================================================================= -->
+
+# Lecture 6
+
+what should we put into config.js file and why do we need config file 
+
+1) Config File /constants file 
+-> we should put all the hardcoded things in congig.js file 
+-> We should name export each and every element from confign
+-> This is because we might config file contains different static data 
+-> we might need specific data from there
+-> thats's why we need to export each element by their name
+
+2) What are hooks
+-> hooks are normal js functions
+-> they came with certain functionality 
+-> they are use to create local state  variable
+
+3) How input works in react
+-> input works differently in HTML and React.
+-> In React there is one way data binding
+-> we cannot write directly inside input element in react 
+-> one way is we can create a const variable in js and assign it as a value to input
+-> but still it will be static 
+-> To make input working in react we have to do data binding through state variable
+-> ans state variable is created using useState()
+
+
+
+4) what is useState()
+-> import as name import --> {}
+-> use to create local state variables
+-> useState() returns a array 
+-> the 1st element of that array is variable name 
+-> main thing is we cannot directly change the state of this variable    --> using onChange(e.target.value)  ❌❌
+-> usestate provide us a function to change the state of local sgtate variable through it.
+-> whatever we write then will update in the local variable. 
+-> i.e setLocalVariableName
+<code>const [searchInput,setSearchInput] = useState("KFC");
+onChange ={(e)=>
+            {
+              // e.target.value;
+              setSearchInput(e.target.value)
+
+            }}
+</code>
+
+
+4) what is a state 
+->
+
+
