@@ -1,40 +1,44 @@
 import RestaurantCard from "./RestaurantCard"
 import {Restaurant} from "../config.js"
 import {useState} from "react"
+
+function filterData(searchInput,restaurants)
+  {
+     return restaurants.filter((restaurant)=> restaurant.author.includes(searchInput));
+  }
+
 const Body = () =>
 {
-  // const searchText = "KFC";
-  //this is react / state variable 
+  const [restaurants, setRestaurants] = useState(Restaurant);
+  const [searchInput,setSearchInput] = useState("");
+  {
 
-  const [displayBoolean, setDisplayBoolean]  = useState("false");
-  const [searchInput,setSearchInput] = useState("KFC");
+  }
+  
     return (
         <>
           <div className="search-container">
             <input type="search" className="search-input" placeholder="Search" 
-            value={searchInput} 
-            onChange ={(e)=>
-            {
-              // e.target.value;
-              setSearchInput(e.target.value)
+              value={searchInput} 
+              onChange ={(e)=>
+              {
+                setSearchInput(e.target.value)
+              }}
+            />
+            
+            <button className="search-btn" onClick={()=>
+              {
+                const data = filterData(searchInput,restaurants);
+                setRestaurants(data);
 
-            }}/>
-            <h1>{displayBoolean}</h1>
-            <button className="search-btn" onClick={()=>{
-              if(displayBoolean==="False")
-              {
-                setDisplayBoolean("True");
-              }
-              else
-              {
-                setDisplayBoolean("False");
-              }
-            }}>Search </button>
+              }}
+            > Search 
+            </button>
           </div>
           <div className="body_">
               {/* The best way is here😎 we can use the map() to map all the object inside RestaurantList */}
               {
-                  Restaurant.map((restaurant)=>{
+                  restaurants.map((restaurant)=>{
                       return <RestaurantCard {...restaurant}/>
 
                   })

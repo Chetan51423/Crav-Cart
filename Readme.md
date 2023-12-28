@@ -385,3 +385,24 @@ conat [searchText,setSearchText] = useState("hello")  // here by default hello i
 -> **If we want our variables is in sync with UI we need to use State variables**
 
 
+6) How to create a True / false toggle button using state variable
+-> create a state variable with default value false
+-> write a arrow function inside search button on Onclick event 
+-> and update the setVariableName() 
+
+```
+```javascript
+   const [displayBoolean, setDisplayBoolean]  = useState("false");
+   <button className="search-btn" onClick={()=>{
+              if(displayBoolean==="False")
+              {
+                setDisplayBoolean("True");
+              }
+              else
+              {
+                setDisplayBoolean("False");
+              }
+            }}>Search 
+   </button>
+
+```
