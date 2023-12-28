@@ -313,40 +313,40 @@ summary:
 
 # Lecture 6
 
-what should we put into config.js file and why do we need config file 
+what should we put into config.js file and why do we need config file <br>
 
-1) Config File /constants file 
--> we should put all the hardcoded things in congig.js file 
--> We should name export each and every element from confign
--> This is because we might config file contains different static data 
--> we might need specific data from there
--> thats's why we need to export each element by their name
+1) Config File /constants file <br>
+-> we should put all the hardcoded things in congig.js file <br>
+-> We should name export each and every element from confign<br>
+-> This is because we might config file contains different static data<br> 
+-> we might need specific data from there<br>
+-> thats's why we need to export each element by their name<br>
 
-2) What are hooks
--> hooks are normal js functions
--> they came with certain functionality 
--> they are use to create local state  variable
+2) What are hooks<br>
+-> hooks are normal js functions<br>
+-> they came with certain functionality <br>
+-> they are use to create local state  variable<br>
 
-3) How input works in react
--> input works differently in HTML and React.
--> In React there is one way data binding
--> we cannot write directly inside input element in react 
--> one way is we can create a const variable in js and assign it as a value to input
--> but still it will be static 
--> To make input working in react we have to do data binding through state variable
--> ans state variable is created using useState()
+3) How input works in react<br>
+-> input works differently in HTML and React.<br>
+-> In React there is one way data binding<br>
+-> we cannot write directly inside input element in react <br>
+-> one way is we can create a const variable in js and assign it as a value to input<br>
+-> but still it will be static <br>
+-> To make input working in react we have to do data binding through state variable<br>
+-> ans state variable is created using useState()<br>
 
 
 
-4) what is useState()
--> import as name import --> {}
--> use to create local state variables
--> useState() returns a array 
--> the 1st element of that array is variable name 
--> main thing is we cannot directly change the state of this variable    --> using onChange(e.target.value)  ❌❌
--> usestate provide us a function to change the state of local sgtate variable through it.
--> whatever we write then will update in the local variable. 
--> i.e setLocalVariableName
+4) what is useState()<br>
+-> import as name import --> {}<br>
+-> use to create local state variables<br>
+-> useState() returns a array <br>
+-> the 1st element of that array is variable name <br>
+-> main thing is we cannot directly change the state of this variable<br>    --> using onChange(e.target.value)  ❌❌<br>
+-> usestate provide us a function to change the state of local sgtate variable through it.<br>
+-> whatever we write then will update in the local variable. <br>
+-> i.e setLocalVariableName<br>
 ```javascript
    const [searchInput,setSearchInput] = useState("KFC");
    onChange =
@@ -359,20 +359,29 @@ what should we put into config.js file and why do we need config file
    }
 
 ```
-![NOTE]
-> we can also write e.target.value without setSearchInput but this is not the write way 
-> now we can use searchInput as our local variable and we can use it anywhere in code 
-> This is called 2-way data binding
-> 2-way because we are reading and writting the adata at the same time .
-
+>![NOTE]
+> we can also write e.target.value without setSearchInput but this is not the write way <br>
+> now we can use searchInput as our local variable and we can use it anywhere in code <br>
+> This is called 2-way data binding<br>
+> 2-way because we are reading and writting the adata at the same time.
+<br>
+> we can change the local state veriable using onChange() method<br>
+> and in react onChange() we have to put arrow function and uit automatically get the event property. (e)
+> using that event property we can read whatever we are typing 
+> if we are able to read we can update it using (setSearchText(e.target.value)
+)
 ### How to create vriable in JS and React 
-```javascript
+```
 const vstext = "hello"  // by default this variable is hello---> tjis is in javascript
 
 conat [searchText,setSearchText] = useState("hello")  // here by default hello is assign to react variable 
 
 ```
-4) what is a state 
-->
+
+5) why do we need state Variables
+-> if some other components change our local varibales 
+-> react cannot tract the normal local variables
+-> if there is any change in local variables react my not know it and that variable may not render on UI properly
+-> **If we want our variables is in sync with UI we need to use State variables**
 
 

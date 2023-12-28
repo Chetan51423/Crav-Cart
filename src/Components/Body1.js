@@ -5,6 +5,8 @@ const Body = () =>
 {
   // const searchText = "KFC";
   //this is react / state variable 
+
+  const [displayBoolean, setDisplayBoolean]  = useState("false");
   const [searchInput,setSearchInput] = useState("KFC");
     return (
         <>
@@ -17,7 +19,17 @@ const Body = () =>
               setSearchInput(e.target.value)
 
             }}/>
-            <button className="search-btn">Search {searchInput}</button>
+            <h1>{displayBoolean}</h1>
+            <button className="search-btn" onClick={()=>{
+              if(displayBoolean==="False")
+              {
+                setDisplayBoolean("True");
+              }
+              else
+              {
+                setDisplayBoolean("False");
+              }
+            }}>Search </button>
           </div>
           <div className="body_">
               {/* The best way is here😎 we can use the map() to map all the object inside RestaurantList */}
