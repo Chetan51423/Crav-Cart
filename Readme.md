@@ -434,13 +434,99 @@ _> so inshort whole UI can be manage by COnfig <br>
 -> we use optional chaining <br>
 -> we maintain 2 separate state variables for storing all restaurants and filter resataurants<br>
 -> we use Shimmer UI<br>
-->using of useEffect() hook / why do we need this hook <br>
+-> using of useEffect() hook / why do we need this hook <br>
 -> calling api and using async await and using it inside useEffect() hook <br>
 -> we do conditional rtenderinng<br>
 -> we learn molithic and micro services architechture<br>
 -> we are building only one microservice and that is  UI <br>
--> 2 way t load / renser our page <br>
+-> 2 way t load / render our page <br>
  - loading page = load API -> then render page<br>
  - loading page = render first -> API call() after <-- this one is preffered and here when our useEffect() usecase emmerge <br>
  -> learn about CORS / their functionalities / they use to trick the brousers to make the API call from our local machine 
+
+3) useEffect() hook
+-> it is a hook 
+-> it takes 2 arguments
+-> 1st argument is a callback function --> mostly a callback function with API call
+-> 2nd parameter is a dependency array 
+-> if the array is empty useEffect() will call only once after the initial render
+-> if we pass elements/object to array 
+-> based on those objects of dependency useEffect() will be called.
+-> suppose we have a state variable inside out dependency array -> useEffect will be called whenever there is state change in state variable  
+> sequesnce ==>  components will render -> useEffect will be called --> it will called again after change in state of stste variable 
+
+```javascript
+
+//  when we do not pass any dependency array it will call once after every render  // here in this case useEffect() default behaviour will be called which is called after each render
+  useEffect(()=>{});
+
+// same case as dependency array is empty --> that means no dependency --> it will be called only once after ibitial render and not for other frequent renders
+  useEffect(()=>{},[]);
+
+// it will render after search text local state variable state changes
+  useEffect(()=>{},[searchText]);
+
+  async function getRestaurants()
+  {
+    const data = await fetch("");
+    const json = await data.json();
+
+    setRestaurants(json?.data?.cards[2]?.data?.cards);
+    setFilterRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+  }
+
+
+```
+
+<!-- =============================================================================================================================================  -->
+
+# lecture 8
+
+Note👉:
+> never create a component inside a compoenent it will create a render problem 
+> never create a state variable [ useState()] inside if else and for loop
+> never create a state variable outside your functional componenrt -> always create it inside the bofy of functional components
+> we can create more than one useEffect();
+
+
+1) React routers
+-> just install using npm install react-router-dom
+```javascript
+ npm install react-router-dom   // install react router package from npm
+
+```
+-> react routers are use to create routes --> that means navigate to certain place/page
+-> to use react router we have to first configutre then and then render it instead of main app layout
+-> first named inport "createBrowserrouter" --> this is a function that is used to create the configuration
+ -> it takes array 
+ -> the array has the list of route configuration and error messages
+
+```javascript
+ import { createBrowserRouter } from "react-router-dom"
+
+ const appRouter = createBrowserRouter([
+   {
+      path:"/",
+      element:<AppLayout>,
+   },
+   {
+      path:"/About",
+      element:<About />
+   }
+ ])
+```
+👉
+> Now we need to render according to this configuration
+> that's why we need to provide this confi. to render
+> for that we use RouterProvider
+
+-> second we have to named import the routerProvider
+ -> it is basically component
+ -> we use routerProvider to render instead of AppLayout component
+```javascript
+import {RouterProuder} from "react-router-dom"
+root.render(<RouterProvider router={appRouter}/> )  // we have just provided the configuration created using createBrowserRouter to RouterProvider as props
+```
+
+
 
