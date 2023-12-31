@@ -366,11 +366,11 @@ what should we put into config.js file and why do we need config file <br>
 > 2-way because we are reading and writting the adata at the same time.
 <br>
 > we can change the local state veriable using onChange() method<br>
-> and in react onChange() we have to put arrow function and uit automatically get the event property. (e)
-> using that event property we can read whatever we are typing 
-> if we are able to read we can update it using (setSearchText(e.target.value)
+> and in react onChange() we have to put arrow function and uit automatically get the event property. (e)<br>
+> using that event property we can read whatever we are typing <br>
+> if we are able to read we can update it using (setSearchText(e.target.value)<br>
 )
-### How to create vriable in JS and React 
+### How to create vriable in JS and React <br>
 ```
 const vstext = "hello"  // by default this variable is hello---> tjis is in javascript
 
@@ -378,17 +378,17 @@ conat [searchText,setSearchText] = useState("hello")  // here by default hello i
 
 ```
 
-5) why do we need state Variables
--> if some other components change our local varibales 
--> react cannot tract the normal local variables
--> if there is any change in local variables react my not know it and that variable may not render on UI properly
--> **If we want our variables is in sync with UI we need to use State variables**
+5) why do we need state Variables<br>
+-> if some other components change our local varibales <br>
+-> react cannot tract the normal local variables<br>
+-> if there is any change in local variables react my not know it and that variable may not render on UI properly<br>
+-> **If we want our variables is in sync with UI we need to use State variables**<br>
 
 
-6) How to create a True / false toggle button using state variable
--> create a state variable with default value false
--> write a arrow function inside search button on Onclick event 
--> and update the setVariableName() 
+6) How to create a True / false toggle button using state variable<br>
+-> create a state variable with default value false<br>
+-> write a arrow function inside search button on Onclick event <br>
+-> and update the setVariableName() <br>
 
 ```
 ```javascript
@@ -406,3 +406,41 @@ conat [searchText,setSearchText] = useState("hello")  // here by default hello i
    </button>
 
 ```
+
+7) Code / workflow of searching and element through Search bar<br>
+-> Created the state variable for storing search text --> and use useState()<br>
+-> onChangeing state of search box set to state variable using setVariable_Name <br>
+-> Create another state variable for restaurants <br>
+-> create a filter function which will take searched data inform of statevariable and return related object <br>
+-> finally set the data return by the filter function to render its elements<br>
+
+
+<!-- ========================================================================================================================================================== -->
+
+
+# Lecture 7
+
+1) What is Config / config driven UI<br>
+-> config is nothing but the JSON object<br>
+-> like one we reated inside our project<br>
+-> like we store data inside it for using it globally <br>
+-> similarly backend send configs for perticular sections like crowsels and normal UI <br>
+_> so inshort whole UI can be manage by COnfig <br>
+-> such UI are konwn as config driven UI<br>
+-> COnfig is no thing but the JSON Object <br>
+
+2) topics covered in this lecture<br>
+-> useEffect() hook <br>
+-> we use optional chaining <br>
+-> we maintain 2 separate state variables for storing all restaurants and filter resataurants<br>
+-> we use Shimmer UI<br>
+->using of useEffect() hook / why do we need this hook <br>
+-> calling api and using async await and using it inside useEffect() hook <br>
+-> we do conditional rtenderinng<br>
+-> we learn molithic and micro services architechture<br>
+-> we are building only one microservice and that is  UI <br>
+-> 2 way t load / renser our page <br>
+ - loading page = load API -> then render page<br>
+ - loading page = render first -> API call() after <-- this one is preffered and here when our useEffect() usecase emmerge <br>
+ -> learn about CORS / their functionalities / they use to trick the brousers to make the API call from our local machine 
+
