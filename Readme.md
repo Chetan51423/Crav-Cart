@@ -529,4 +529,238 @@ root.render(<RouterProvider router={appRouter}/> )  // we have just provided the
 ```
 
 
+2) Types of routing 
+-> client side routing 
+-> server side routing
+
+3) how to empliment client side routing what are its uses
+-> we use <link to="/target">Target</link> tag to route inside the page
+-> when we want to route multiple child components we have to use <outlet/> tag 
+
+```javascript
+const AppLayout = ()=>
+{
+   return ( 
+      <Header/>
+      <Outlet/>  // <--------this is outlet
+      <Footer/>
+   )
+}
+
+const appRouter = createBrowserRouter([
+   {
+      path:"/",
+      element:<AppLayout/>,
+      errorElement:<Error/>,
+      children:[
+         {
+            path:"/",
+            element:<Body/>
+         },
+         {
+            path:"/about",
+            element:<About/>
+         }
+         {
+            path:"/Contact",
+            element:<Contact/>
+         }
+      ]
+   }
+])
+```
+
+4) What we lernt in this lecture
+> we can create multiple useEffect()
+> we cannot write useState() inside if else
+> we can have can import images from our machine -> using assets folder  -> it is export as defult export by default.
+> how can we use our own shimmer instead of importing package from npm
+> learnt about formik for form --> goto tutorial 
+> implement routers using createBrowserRouter() --> takest an array of list of configuration/object of routes.   we can have children inside. we provide it in <outlet/>
+> RouterProvider is the component use to render instead of  AppLayout
+```javascript
+root.render(<RouterProvider router ={appRouter}>)    //appRouter --> this is the variable which stores all the configuration of createBrowserRouter.
+```
+> we have done dynamic router using {useParas} from react "react-router-dom"
+>note:-> always use optional chaining
+> we learn to use link component  //  <link to=""></link>
+
+<!-- ============================================================================================================ -->
+
+# Lecture 10 (Class base components)
+
+1) React lifecycle --> an inportant concept for class based conponents  
+> React lifecycle:->  mounting ----> updating ---> unmounting
+2) 2 phase in react -> render phase and commit phase
+3) useSatet() -> in functional       this.setSate() --> in class based comp.
+4) useEffect() -> in functional      componentDidMount() -> in class based comp.
+5) if we do not have props / states then there will be no update in lifecycle --> only mounting and unmounting
+6) componentWillUnmount is use to clear the mounting of component
+
+
+<!-- ============================================================================================================== -->
+
+# Lecture 11  (optimizing our app)
+
+1) lazt loading
+
+2) code splitting 
+
+3) building our own hooks 
+
+4) when / how / why  should we build hooks
+> reusability
+> readability
+> separation of consern
+
+5) Create utils folder to save utility functions 
+> make our more modular  
+> this makes our code for testable 
+> readable 
+> makes code maintainable 
+> easy to debug 
+
+6) what ever the extra code instead of components we can write then as hooks--> this is the time to create our custom hooks
+> whenever we see the messy code we can wrap up it outside of component
+> this done using hooks
+> hook are js arrow function returning the values.
+
+7) we have created new feature called isOnline/isOffline using custom hook
+> create useOnline hook 
+> then export deafalt it to make use of its working.
+```javascript
+const useOnline = ()=>{
+   const[isOnline, setIsOnline]=useState(true);
+   useEffect(()=>{
+      window.addEventListener("online",()=>{ setIsOnline(true);});
+      window.addEventListener("offline",()=>{ setIsOnline(false);});
+      return isOnline;
+   },[]);
+   
+}
+
+export default useOnline;
+```
+
+>![Note] 🔥 
+> whenever we use addevent listener we need to remove it else it will be called for every time new render occures
+> in above code we have use addeventlistener 
+> once we have set the values of "isOnline" variable we must remove the event listener
+> below is the code to remove the event listeners once we set "isOnline"
+> create hook for authentication / etc,
+```javascript
+const useOnline = ()=>{
+   const[isOnline, setIsOnline]=useState(true);
+   useEffect(()=>{
+
+      const handleOnline = ()=>{ setIsOnline(true);}
+      const handleOffline = ()=>{ setIsOnline(true);}
+
+      window.addEventListener("online",handleOnline);
+      window.addEventListener("offline",handleOffline);
+      
+      return ()=>{
+         window.removeEventListener("online", handleOnline);
+         window.removeEventListener("offline", handleOffline);
+      }
+   },[]);
+   
+   return isOnline;
+}
+
+export default useOnline;
+```
+
+8) Dynamic Bundeling Concept
+
+>![Note]
+> we use parcel as a bundler which bundle all the code into one js file.
+> That js file contain all the js code we have written in our project
+> when out app is huge is became inefficient to load that js file --> it contains all the code 
+> at that time we use the concept called dynamic loading / code splitting
+> there what happen is instead of normal importing the components we just import them dynamically 
+> so that the specific component will only loads when we use it in actual app
+
+-> dynamic bundelling can be called as
+ - CHunking
+ - Code splitting
+ - Dynamic Bundling
+ - lazy loading
+ - On demand Loading 
+ - Dynamic import 
+
+```javascript 
+const Instamart = lazy(() => import("./components/Instamart"));
+```
+-> react provide function called lazy() which is named import from react which provide the capbility to do dynamic loading.
+-> upon on deman loading -> react load that secific components/file dynamically first.
+-> for the first time it gives error because it takes time to load that daynamic content.
+-> second time you visit that perticular component/file it will load properly
+
+>[!Note]
+> to make this process smooth 
+> react provide a component called <Suspense></Suspense>
+```javascript
+import {lazy, Suspense } from 'react'
+
+<Suspense>Instmart</Suspense>
+```
+> spspense tage will understand that we have dynamically loaded some content.
+> it provide one prop called "fallback"
+> "fallback" is use for showing shimmer like components untill content in suspense loads properly.
+> we should not lazy load inside components else we have to lazy load at top after all the imports done.
+
+```javascript
+<Suspense  fallback={<Shimmer/>}>Instmart</Suspense>
+```
+
+
+# Lecture 12
+
+1) Different methods to write css
+-> Normal CSS
+-> inline css
+-> using SCSS / SASS
+-> Using component Libraries
+ - Material UI
+ - Ant UI
+ - Base UI
+ - Chakra UI
+ - Styled COmponents  
+-> using Frameworks
+2) pros
+-> development process becames fast
+3) cons
+-> it increase the bundle size
+-> forced UI
+
+>![Note]
+> While going for interviews whe should know about the pros and cons of using different css methods we can use to style our ptoject.
+
+4) TailWind CSS
+-> it will remove the default css
+-> It will override css
+-> It provide classes to add style in our html
+> import the script of tailwind from official website
+> init tailwind and post css
+> we will get the dev-dependencies of tailwind and postcss
+>we will get the tailwind.config.js
+ - we have to configuration of tailwindcss
+ - in content:["./src/**/*.{html,js}",]
+
+```javascript
+//how to install taildwind css and postcss pa ckage 
+npm install -D tailwindcss postcss
+
+//initialize tailwindcss
+npx tailwind init
+```
+
+5) what is postcss
+-> while using tailwind css we need to work with classes
+-> postcss is the package which will tell bable that those are the classes of tailwindcss compile them to normal css.
+-> like bablerc files we have to create the .postcssrc file
+-> we have to store some configuration here 
+
+6) Code inside our css will only have 3 line that tailwind provides us.
 

@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client"
 import Header from "./Components/Header"
 import Body from "./Components/Body1"
 import Footer from "./Components/Footer"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import About from "./Components/About"
+import Error from "./Components/Error"
 /*
 ==================================creating element using javascript===============================================================
 # creatingelements in react using React.createElement()
@@ -488,5 +491,18 @@ const Applayout = ()=>
     )
 }
 
+const appRouter = createBrowserRouter([
+    {
+        path:"/",
+        element:<Applayout/>,
+        errorElement:<Error/>
+    },
+    {
+        path:"/About",
+        element:<About/>,
+        errorElement:<Error/>
+    }
+])
+
 const root2 = ReactDOM.createRoot(document.getElementById('root'));
-root2.render(<Applayout/>);
+root2.render(<RouterProvider router={appRouter}/>);
