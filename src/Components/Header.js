@@ -1,7 +1,7 @@
 const Website_title =()=>
 {
     return (
-        <h2 className="website_name">Aunty's News Buereau</h2>
+        <h2 className="website_name">Aunty's Kitchen</h2>
     )
     
 }
