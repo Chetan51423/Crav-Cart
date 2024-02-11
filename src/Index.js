@@ -3,9 +3,11 @@ import ReactDOM from "react-dom/client"
 import Header from "./Components/Header"
 import Body from "./Components/Body1"
 import Footer from "./Components/Footer"
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider , Outlet} from "react-router-dom"
 import About from "./Components/About"
 import Error from "./Components/Error"
+import Contct_Us from "./Components/Contct_Us"
+import RestaurantInfo from "./Components/RestaurantInfro"
 /*
 ==================================creating element using javascript===============================================================
 # creatingelements in react using React.createElement()
@@ -482,12 +484,9 @@ const Applayout = ()=>
     // Here comes Reacts Fragments --> component can have only one partent element to avoid the errors we use react fragments
        <>
        <Header/>
-       <Body/>
+       <Outlet/>
        <Footer/>
        </>
-       
-       
-
     )
 }
 
@@ -495,7 +494,29 @@ const appRouter = createBrowserRouter([
     {
         path:"/",
         element:<Applayout/>,
-        errorElement:<Error/>
+        errorElement:<Error/>,
+        children:[
+            {
+                path:"/",
+                element:<Body/>,
+                errorElement:<Error/>
+            },
+            {
+                path:"/About",
+                element:<About/>,
+                errorElement:<Error/>
+            },
+            {
+                path:"/Contct_Us",
+                element:<Contct_Us/>,
+                errorElement:<Error/>
+            },
+            {
+                path:"/restaurant/:id",
+                element:<RestaurantInfo/>,
+                errorElement:<Error/>
+            }
+        ]
     },
     {
         path:"/About",

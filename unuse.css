@@ -1,6 +1,8 @@
 #container
 {
     background-color:rgb(225, 141, 30);
+    width:100%;
+    overflow-x: hidden;
     
 }
 .body_
@@ -75,6 +77,39 @@ a
     background-color: rgb(245, 245, 175);
 
 }
+.shimeercard
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sh_card
+{
+    width: 312px;
+    height: 371px;
+    /* padding: 8px; */
+    margin: 20px;
+    border-radius: 5%;
+    background-color: rgb(201, 202, 203);
+    overflow: hidden;
+
+}
+.card_animation{
+    width: 30px;
+    height: 490px;
+    
+    border-radius: 5%;
+    background-color: rgb(174, 175, 176);
+    background: linear-gradient(120deg,
+    rgba(245, 245, 242, 0.2) 30%,
+    rgba(237, 237, 234, 0.2) 50%,
+    rgba(247, 244, 247, 0.2) 80%);
+    animation: shimmer 1s infinite linear;
+ }
+ @keyframes shimmer {
+    from {transform: translateX(-20%);}
+    to {transform: translateX(1500%);}
+ }
 .card>img
 {
     width: 100%;

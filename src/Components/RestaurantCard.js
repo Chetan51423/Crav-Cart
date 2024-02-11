@@ -1,14 +1,25 @@
-const RestaurantCard =({urlToImage,author, publishedAt})=>
+
+import { CloudinaryImage_Url } from "../config.js"
+const RestaurantCard =({cloudinaryImageId,name, costForTwo,avgRating
+})=>
 {
     // const {urlToImage,author, publishedAt} = restaurant;   // we have to pass all the props individually 
+    
     return (
        
         <div className="card">
-            <img src={urlToImage} alt="card" />
+            {/* <img src={ "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId }
+             alt="Image"/> */}
+             {/* <img src={ CloudinaryImage_Url + cloudinaryImageId }
+             alt="Image"/> */}
+             <img src={ `${CloudinaryImage_Url}${cloudinaryImageId}` }
+             alt="Image"/>
+             
             <div className="cardData">
-                <h2>{author}</h2>
-                <h3>{publishedAt}</h3>
-                <h4>5⭐🔥</h4>
+                <h2>{name}</h2>
+                <h3>{costForTwo}</h3>
+                <h4>{avgRating
+}⭐🔥</h4>
                 <h4></h4>
             </div>
         </div>
@@ -16,3 +27,5 @@ const RestaurantCard =({urlToImage,author, publishedAt})=>
 }
 
 export default RestaurantCard
+
+// src={`${CloudinaryImage_Url} ${cloudinaryImageId }`}

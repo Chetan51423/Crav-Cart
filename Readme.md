@@ -28,7 +28,7 @@ ex:- webpack (it is for production tready apps)
 
 
 3) why we need npm ?<br>
--> it manages ppackages in our app<br>
+-> it manages packages in our app<br>
 -> our app didn't only run on react<br>
 -> it requires a lot of packages to make it functioning.<br>
 -> so we need to download lots of packages <br>
@@ -51,18 +51,18 @@ ex:- webpack (it is for production tready apps)
 -> and dependencies are use globally like react.<br>
 
 6) caret (^) and tilde (~) in package.json<br>
--> it is use befor the version of dependencies<br>
+-> it is use before the version of dependencies<br>
 -> if we want the modify if minor version changes then use (^)<br>
 -> if we want to modify the major version the use          (~)<br>
 -> don't use anything if we don't want to upgrade <br>
 
 7) package-lock.json<br>
--> it locks the version of package that yuo use <br>
+-> it locks the version of package that you use <br>
 -> it is the proof that we are using specific versions. <br>
 -> it lock the versions of denpendencies<br>
 -> it should be out of gitignore.<br>
 -> it mantain the hash of the version---> it maintain the integrity.<br>
--> 
+ 
 
 8) node modules folder in our app<br>
 -> whenever we install packages from npm its node module package comes<br>
@@ -72,7 +72,7 @@ ex:- webpack (it is for production tready apps)
 
 Note👉👉: <br>
 <p>
-aapalyala app create/ run karayla kahi packages lagnaar aahet (like parcel) --> te nanter dependencies madhe mojle jatat. kadhi kadhi asa hote ki tya dependencies la pan dusrya dependencies ver nirbhar rahav lagte. ter tya sarva dependencies chi info aapalya package-lock.jsom madhe dili aste. aani tyachya related packages node modules store kele astat. package-lock.jsom madhe enough information dili aste ki te purna node module ch folder create karu shakte 
+aapalyala app create/ run karayla kahi packages lagnaar aahet (like parcel) --> te nanter dependencies madhe mojle jatat. kadhi kadhi asa hote ki tya dependencies la pan dusrya dependencies ver nirbhar rahav lagte. ter tya sarva dependencies chi info aapalya package-lock.json madhe dili aste. aani tyachya related packages node modules store kele astat. package-lock.json madhe enough information dili aste ki te purna node module ch folder create karu shakte 
 </p>
 
 
@@ -80,7 +80,7 @@ aapalyala app create/ run karayla kahi packages lagnaar aahet (like parcel) --> 
 Note2👉👉<br>
 : we should not add node modules to our gitignore because it is too heavy. <br> 
 
-Node3👉👉<br>
+Note3👉👉<br>
 : the question arises here is then if we push our app to github or on server and you said ki we need not to push node module folders to it then <br>how can our app will work?<br>
 --> the ans is our package-lock.json --> it is responsible to regenerate whole node package module on web itself. <br>
 -> we need not to push node modules folders to git and further package-lock.json will create itself.<br>
@@ -104,7 +104,7 @@ npm commands:<br>
 -> npm install react-dom -> -"-  react-dom packages<br>
 
 NOde👉👉:<br>
- we wants react globally so that's wht we are not using "(-D)" here.<br>
+ we wants react globally so that's what we are not using "(-D)" here.<br>
 
 
 10) igniting our react app<br>
@@ -113,7 +113,7 @@ command:-> npx parcel index.html<br>
 -> entery point --> index.html <br>
 
 11) Functions of Parcel / How our react App works and how all things goes behind the seen<br>
--> when we ignite our react app tgere is lot mantyy things are working together to make our react app run!<br>
+-> when we ignite our react app there is lot mantyy things are working together to make our react app run!<br>
 In background we have<br>
 -> dev-dependencies<br>
 -> dependencies<br>
@@ -130,7 +130,7 @@ all of then work together in cordination to run react app<br>
 (these are the two types of building our app with parcel. dev build require less time as compaired to production builds. the seen is everything is dependent on files and minification of files done by parcel.)<br>
 👉 super fast build algorithm<br>
 👉 image optimzation. --> images / media take the larges time to reload. Parcel is so pwerful that it optimize images / media also.<br>
-👉 caching while developing. --> it is an important concept while dveloping / building our react app. When we build our app using parcel for the first tieme it take more time as compaired when we build it subsequent times. this is beacuse first time parcel have to go through all files which is time consuming. to prevent that parcel create its own folder to save the caching data. using that data parcel can build the next react app in less time. <br>👉this is the concept.
+👉 caching while developing. --> it is an important concept while dveloping / building our react app. When we build our app using parcel for the first tie\me it take more time as compaired when we build it subsequent times. this is beacuse first time parcel have to go through all files which is time consuming. to prevent that parcel create its own folder to save the caching data. using that data parcel can build the next react app in less time. <br>👉this is the concept.
 👉compression:-><br>
 👉Compatible with older version of browser<br>
 👉HTTPS on dev<br>
@@ -182,7 +182,7 @@ all of then work together in cordination to run react app<br>
 -> we have to add babel plugin and the configure it <br>
 to remove console logs<br>
 -> for that we have to go to *babel-plugin-transform-remove-console*<br>
--> and then isatall the package using *npm install babel-plugin-transform-remove-console --save-dev / -D* command to install the package<br>
+-> and then install the package using *npm install babel-plugin-transform-remove-console --save-dev / -D* command to install the package<br>
 -> we can see it inside node modules and package-lock.json<br>
 -> next step is to configure that plugin by creating the .babelrc file and add the specification there from the website.<br>
 -> .babelrc is configuration file for babel plugins<br>
@@ -215,7 +215,7 @@ H.W<br>
 
 3) How JSX works ?<br>
 👉 our browser do not understand JSX<br>
--> browsers acn only understand javascript<br>
+-> browsers can only understand javascript<br>
 -> babel is the one which helps to execute JSX<br>
 -> babel is compile for modern javascript<br>
 -> behind the seen babel converts the JSX code and executes it<br>
@@ -259,7 +259,7 @@ summary:
 7) react element using jsx<br>
 8) components <br>
 9) its syntax / styles<br>
-10) how to use react eelemnt inside component<br>
+10) how to use react element inside component<br>
 11) how to render component<br>
 
 
@@ -285,7 +285,7 @@ summary:
 -> we have to write css properties like objects in JS</br>
 -> properties name are also different while we use Inline css</br>
 -> normal (background-color:black)    ---> in jsx/component/ react   (backgroundCOlour:"black")</br>
--> only difference is write words in camel casing type and write it who we write objects</br>
+-> only difference is write words in camel casing type and write it how we write objects</br>
 
 3) <h3>React Fragments</h3>
 -> Inside components we can only have one parent element<br>
@@ -297,7 +297,7 @@ summary:
 
 4) <h3>Components Writting Journey</h3>
 -> created a restaurant card components and simply use it multiple times in body<br>
--> then created the restaurand object which takes card details <br>
+-> then created the restaurant object which takes card details <br>
 -> then instead of static typing the data of restaurant inside card i am using restaurant object data inside it <br>
 -> the plan is to fetch lots of objects from api and then render them inside body by fetching each restaurant data.<br>
 
@@ -365,22 +365,21 @@ what should we put into config.js file and why do we need config file <br>
 > This is called 2-way data binding<br>
 > 2-way because we are reading and writting the adata at the same time.
 <br>
-> we can change the local state veriable using onChange() method<br>
+> we can change the local state variable using onChange() method<br>
 > and in react onChange() we have to put arrow function and uit automatically get the event property. (e)<br>
 > using that event property we can read whatever we are typing <br>
 > if we are able to read we can update it using (setSearchText(e.target.value)<br>
 )
 ### How to create vriable in JS and React <br>
-```
-const vstext = "hello"  // by default this variable is hello---> tjis is in javascript
 
-conat [searchText,setSearchText] = useState("hello")  // here by default hello is assign to react variable 
-
+```javascript
+   const vstext = "hello"  // by default this variable is hello---> tjis is in javascript
+   const [searchText,setSearchText] = useState("hello")  // here by default hello is assign to react variable 
 ```
 
 5) why do we need state Variables<br>
 -> if some other components change our local varibales <br>
--> react cannot tract the normal local variables<br>
+-> react cannot track the normal local variables<br>
 -> if there is any change in local variables react my not know it and that variable may not render on UI properly<br>
 -> **If we want our variables is in sync with UI we need to use State variables**<br>
 
@@ -390,7 +389,7 @@ conat [searchText,setSearchText] = useState("hello")  // here by default hello i
 -> write a arrow function inside search button on Onclick event <br>
 -> and update the setVariableName() <br>
 
-```
+
 ```javascript
    const [displayBoolean, setDisplayBoolean]  = useState("false");
    <button className="search-btn" onClick={()=>{
@@ -409,7 +408,7 @@ conat [searchText,setSearchText] = useState("hello")  // here by default hello i
 
 7) Code / workflow of searching and element through Search bar<br>
 -> Created the state variable for storing search text --> and use useState()<br>
--> onChangeing state of search box set to state variable using setVariable_Name <br>
+-> onChanging state of search box set to state variable using setVariable_Name <br>
 -> Create another state variable for restaurants <br>
 -> create a filter function which will take searched data inform of statevariable and return related object <br>
 -> finally set the data return by the filter function to render its elements<br>
@@ -422,12 +421,12 @@ conat [searchText,setSearchText] = useState("hello")  // here by default hello i
 
 1) What is Config / config driven UI<br>
 -> config is nothing but the JSON object<br>
--> like one we reated inside our project<br>
+-> like one we created inside our project<br>
 -> like we store data inside it for using it globally <br>
 -> similarly backend send configs for perticular sections like crowsels and normal UI <br>
-_> so inshort whole UI can be manage by COnfig <br>
+_> so inshort whole UI can be manage by Config <br>
 -> such UI are konwn as config driven UI<br>
--> COnfig is no thing but the JSON Object <br>
+-> Config is no thing but the JSON Object <br>
 
 2) topics covered in this lecture<br>
 -> useEffect() hook <br>
@@ -436,7 +435,7 @@ _> so inshort whole UI can be manage by COnfig <br>
 -> we use Shimmer UI<br>
 -> using of useEffect() hook / why do we need this hook <br>
 -> calling api and using async await and using it inside useEffect() hook <br>
--> we do conditional rtenderinng<br>
+-> we do conditional renderinng<br>
 -> we learn molithic and micro services architechture<br>
 -> we are building only one microservice and that is  UI <br>
 -> 2 way t load / render our page <br>
@@ -452,19 +451,19 @@ _> so inshort whole UI can be manage by COnfig <br>
 -> if the array is empty useEffect() will call only once after the initial render
 -> if we pass elements/object to array 
 -> based on those objects of dependency useEffect() will be called.
--> suppose we have a state variable inside out dependency array -> useEffect will be called whenever there is state change in state variable  
-> sequesnce ==>  components will render -> useEffect will be called --> it will called again after change in state of stste variable 
+-> suppose we have a state variable inside our dependency array -> useEffect will be called whenever there is state change in state variable  
+-> sequesnce ==>  components will render -> useEffect will be called --> it will called again after change in state of state variable 
 
 ```javascript
 
 //  when we do not pass any dependency array it will call once after every render  // here in this case useEffect() default behaviour will be called which is called after each render
   useEffect(()=>{});
 
-// same case as dependency array is empty --> that means no dependency --> it will be called only once after ibitial render and not for other frequent renders
+// same case as dependency array is empty --> that means no dependency --> it will be called only once after initial render and not for other frequent renders
   useEffect(()=>{},[]);
 
 // it will render after search text local state variable state changes
-  useEffect(()=>{},[searchText]);
+  useEffect(()=>{},[searchText]); 
 
   async function getRestaurants()
   {
@@ -497,7 +496,7 @@ Note👉:
 ```
 -> react routers are use to create routes --> that means navigate to certain place/page
 -> to use react router we have to first configutre then and then render it instead of main app layout
--> first named inport "createBrowserrouter" --> this is a function that is used to create the configuration
+-> first named import "createBrowserrouter" --> this is a function that is used to create the configuration
  -> it takes array 
  -> the array has the list of route configuration and error messages
 
@@ -536,6 +535,10 @@ root.render(<RouterProvider router={appRouter}/> )  // we have just provided the
 3) how to empliment client side routing what are its uses
 -> we use <link to="/target">Target</link> tag to route inside the page
 -> when we want to route multiple child components we have to use <outlet/> tag 
+  - for example wewant to render the about us component ot contact us component or cart component by keepin the header and footer component at place 
+  - at this time we can use concept of nested routing 
+  - here we can use the of children of configuration
+  - outlet will help us from 
 
 ```javascript
 const AppLayout = ()=>
@@ -573,7 +576,7 @@ const appRouter = createBrowserRouter([
 4) What we lernt in this lecture
 > we can create multiple useEffect()
 > we cannot write useState() inside if else
-> we can have can import images from our machine -> using assets folder  -> it is export as defult export by default.
+> we can import images from our machine -> using assets folder  -> it is export as defult export by default.
 > how can we use our own shimmer instead of importing package from npm
 > learnt about formik for form --> goto tutorial 
 > implement routers using createBrowserRouter() --> takest an array of list of configuration/object of routes.   we can have children inside. we provide it in <outlet/>
@@ -586,7 +589,50 @@ root.render(<RouterProvider router ={appRouter}>)    //appRouter --> this is the
 > we learn to use link component  //  <link to=""></link>
 
 <!-- ============================================================================================================ -->
+ # Lecture 9 (finding a path)
 
+ #### important things about useEffect()
+ > it has two parameters
+ > first parameter is a callback function 
+ > send parameter is a dependency array
+ >!NOTE
+ > condition 1: useEffect( callback(), dependency array[]);
+  - it will called everytime when  there is the change in elements of dependency array
+> condition 2: useEffect( callback() , dempty dependency array[] )
+  - in this case when dependency array is empty -> useEffect will be called only once after the initial render 
+> condition 3; useEffect( callbacek())
+  - in theis case when useEffect do not have any dependency array then useEffect wuill be called every time when component renders
+
+2) Note : Never create a component inside a component 
+
+3) never write a useState inside if else or inside a for loop
+
+4) useState is a hook use to create a local variables inside your functional components.---> never create a useState outside of functional component 
+
+5) it is completely fine to create multiple useEffect() according to their use;
+
+6) keep your images in your asets folder.
+-> its better to keep in CDN
+-> images are optimize when they are stored at cdn
+
+7) React-router-dom
+-> install react-router-dom ---> npm inostall react-router-dom
+
+1) create configuration for routing
+-> name inport the "createBrouserRouter" from 'react-router-dom'
+-> create the confuguration using this function.
+-> const appRouter = createBrowserRouter([{},{},{},{}])   --> {} <-- inside this we have configuration
+
+
+remaining things arfe already written in lecture 8 👉
+
+
+
+
+
+
+
+<!-- ============================================================================================================ -->
 # Lecture 10 (Class base components)
 
 1) React lifecycle --> an inportant concept for class based conponents  
@@ -763,4 +809,51 @@ npx tailwind init
 -> we have to store some configuration here 
 
 6) Code inside our css will only have 3 line that tailwind provides us.
+
+<!-- =================================================================================================================================================== -->
+
+# Lectire 13
+
+Note:-> we will be discussing about data layer and UI layer in this chapter.
+
+
+1) What is Props drilling
+-> props drilling means passing props from parent to child 
+->it goes in a chaning and increase if e have larger application 
+
+>![DIsadvanteage of props drilling]
+> it makes out code messy // if props drilling make the chain of lest say more than 5 then we might end up with passing props to childs even they didn't need it.
+> If we made change in one of the prop ...then it will made all the child components of parent to render again to which we have pass our props.
+
+2) How can we pass props to our parent
+-> there are very less cases to pass props from child component to parent comp.
+-> we can do it using custom hooks
+
+3) What is lifting the state up
+-> instead of child mange their own state --> let parent handle the state of its chids --> this is called as lifting the state up
+-> we pass the state to child through props from parent and handle their state.
+
+4) we learn react dev tools
+-> it help developer by showing
+the component view of react code
+-> inshort it shows virtual dom which is easier to understand and debug 
+
+5) profiler in react dev tools 
+-> it will record all the timing it take for perticular element to load.
+-> it gives flamegraph --> that gives detail about the timings
+-> rank! -> it will rank the elements according to the time it take to load them.
+
+6) How we use the any perticular state variables anywhere inside our react app without props drilling
+-> This problem can be solved by storing the state variable in central space that react provides 
+-> that central space is called as react "context"
+-> there are similar other tools like react context 
+ - mobex
+ - flux
+ - redus store
+-> react providetheir own tool called react context to store all the state variable globally
+
+>![Note]
+> We will never store the data inside local storage.
+> it is very costly to update  the data when it is store at local storage. 
+> if we wants our data to visible everywhere and every component get its acces then we can store this state variables to react central space called --> "react context"
 

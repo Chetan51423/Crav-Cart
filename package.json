@@ -2,7 +2,6 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "This is react from Scratch course paractice + notes;",
-  "main": "Index.js",
   "scripts": {
     "start": "parcel Index.html",
     "build": "parcel build Index.html",
@@ -29,7 +28,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^6.22.0"
   },
   "browserslist": [
     "last 2 Chrome versions"

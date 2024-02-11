@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Website_title =()=>
 {
     return (
@@ -17,9 +19,9 @@ const Header = () =>
                     <img className="thali" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0svnqn9Anh0RAqVtyuCk-RMSYuJ5oCIxyxQ&usqp=CAU" alt="" />
                     </div>   
                 <div className="nav_links">
-                    <a href="">About</a>
-                    <a href="">Home</a>
-                    <a href="">Contact Us</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/About">About</Link>
+                    <Link to="/Contct_Us">Contct_Us</Link>
                     <a href="">Cart</a>
                 </div>
             </div>
