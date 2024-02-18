@@ -22,6 +22,7 @@ const Header = () =>
                     <Link to="/">Home</Link>
                     <Link to="/About">About</Link>
                     <Link to="/Contct_Us">Contct_Us</Link>
+                    <Link to="/Instamart">Instamart</Link>
                     <a href="">Cart</a>
                 </div>
             </div>

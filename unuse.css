@@ -70,8 +70,8 @@ a
 {
     border:3px solid blueviolet;
     width: 312px;
-    height: 371px;
-    /* padding: 8px; */
+    height: 400px;
+    padding: 1px;
     margin: 20px;
     border-radius: 5%;
     background-color: rgb(245, 245, 175);
@@ -115,12 +115,23 @@ a
     width: 100%;
     height: 208px;
     border-radius: 5%;
+    
 }
 .cardData
 {
     padding: 10px;
+    text-decoration: none;
 }
-
+.cardData-text{
+    margin-bottom: -10px;
+    text-decoration: none;
+    color: rgb(1, 2, 13);
+}
+.cardData-text:hover
+{
+    color: blue;
+    text-decoration: none;
+}
 .search-container 
 {
     
@@ -148,13 +159,15 @@ a
 {
     height: 200px;
     width: 100%;
-    margin: 20px;
-    padding: 20px;
+    margin-top: 70px;
+    /* padding: 20px; */
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: space-around;
     background-color: blueviolet;
+    /* position: sticky; */
+    bottom: 0;
 }
 .footer-button
 {

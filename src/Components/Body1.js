@@ -4,13 +4,8 @@ import {useState, useEffect} from "react"
 import Shimmer from "./Shimmer.js"
 import { Link } from "react-router-dom"
 import { filterData } from "../Utils/filterData.js"
+import {useOnline} from "../Utils/useOnline.js"
 
-
-
-// function filterData(searchInput,restaurants)
-// {
-//     return restaurants.filter((restaurant)=> restaurant.info.name.includes(searchInput));
-// }
 
 const Body = () =>
 {
@@ -29,6 +24,13 @@ const Body = () =>
     const json2 = await d2.json();
     seaAllRestaurants(json2.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setRestaurants(json2.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  }
+
+  const online = useOnline();
+
+  if(!online)
+  {
+    return <h1 style={{textAlign:"center", margin:"100px auto 100px"}}>🔴Offline, Please check your Internet ! 🔴</h1>
   }
   return restaurants.length===0 ? (<Shimmer/>) : (
       <>

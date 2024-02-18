@@ -1,4 +1,4 @@
-import React from "react"
+import React, {lazy, Suspense} from "react"
 import ReactDOM from "react-dom/client"
 import Header from "./Components/Header"
 import Body from "./Components/Body1"
@@ -8,6 +8,11 @@ import About from "./Components/About"
 import Error from "./Components/Error"
 import Contct_Us from "./Components/Contct_Us"
 import RestaurantInfo from "./Components/RestaurantInfro"
+import Shimmer from "./Components/Shimmer"
+
+
+
+const Instamart = lazy(()=>import("./Components/Instamart"))
 /*
 ==================================creating element using javascript===============================================================
 # creatingelements in react using React.createElement()
@@ -514,6 +519,11 @@ const appRouter = createBrowserRouter([
             {
                 path:"/restaurant/:id",
                 element:<RestaurantInfo/>,
+                errorElement:<Error/>
+            },
+            {
+                path:"/Instamart",
+                element:<Suspense fallback={<Shimmer/>}><Instamart/></Suspense>,
                 errorElement:<Error/>
             }
         ]

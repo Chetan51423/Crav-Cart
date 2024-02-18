@@ -538,7 +538,8 @@ root.render(<RouterProvider router={appRouter}/> )  // we have just provided the
   - for example wewant to render the about us component ot contact us component or cart component by keepin the header and footer component at place 
   - at this time we can use concept of nested routing 
   - here we can use the of children of configuration
-  - outlet will help us from 
+  - outlet will help us to render the chilern element to the body
+  - if there is any special rout like "/" or "/About" or "/COntact_Us" then outlet will only render this tag  
 
 ```javascript
 const AppLayout = ()=>
@@ -648,7 +649,7 @@ remaining things arfe already written in lecture 8 👉
 
 # Lecture 11  (optimizing our app)
 
-1) lazt loading
+1) lazy loading
 
 2) code splitting 
 
@@ -660,7 +661,7 @@ remaining things arfe already written in lecture 8 👉
 > separation of consern
 
 5) Create utils folder to save utility functions 
-> make our more modular  
+> make our code more modular  
 > this makes our code for testable 
 > readable 
 > makes code maintainable 
@@ -673,7 +674,7 @@ remaining things arfe already written in lecture 8 👉
 
 7) we have created new feature called isOnline/isOffline using custom hook
 > create useOnline hook 
-> then export deafalt it to make use of its working.
+> then export deafault it to make use of its working.
 ```javascript
 const useOnline = ()=>{
    const[isOnline, setIsOnline]=useState(true);
@@ -722,8 +723,8 @@ export default useOnline;
 >![Note]
 > we use parcel as a bundler which bundle all the code into one js file.
 > That js file contain all the js code we have written in our project
-> when out app is huge is became inefficient to load that js file --> it contains all the code 
-> at that time we use the concept called dynamic loading / code splitting
+> when our app is huge is became inefficient to load that js file --> it contains all the code 
+> at that time we use the concept called dynamic loading / code splitting / chunking / lazy loading / on demand loading / dynamic import 
 > there what happen is instead of normal importing the components we just import them dynamically 
 > so that the specific component will only loads when we use it in actual app
 
@@ -739,7 +740,7 @@ export default useOnline;
 const Instamart = lazy(() => import("./components/Instamart"));
 ```
 -> react provide function called lazy() which is named import from react which provide the capbility to do dynamic loading.
--> upon on deman loading -> react load that secific components/file dynamically first.
+-> upon on demand loading -> react load that secific components/file dynamically first.
 -> for the first time it gives error because it takes time to load that daynamic content.
 -> second time you visit that perticular component/file it will load properly
 
@@ -747,11 +748,11 @@ const Instamart = lazy(() => import("./components/Instamart"));
 > to make this process smooth 
 > react provide a component called <Suspense></Suspense>
 ```javascript
-import {lazy, Suspense } from 'react'
+import {lazy, Suspense } from 'react' 
 
 <Suspense>Instmart</Suspense>
 ```
-> spspense tage will understand that we have dynamically loaded some content.
+> suspense tage will understand that we have dynamically loaded some content.
 > it provide one prop called "fallback"
 > "fallback" is use for showing shimmer like components untill content in suspense loads properly.
 > we should not lazy load inside components else we have to lazy load at top after all the imports done.
@@ -830,7 +831,7 @@ Note:-> we will be discussing about data layer and UI layer in this chapter.
 -> we can do it using custom hooks
 
 3) What is lifting the state up
--> instead of child mange their own state --> let parent handle the state of its chids --> this is called as lifting the state up
+-> instead of child mange their own state --> let parent handle the state of its childs --> this is called as lifting the state up
 -> we pass the state to child through props from parent and handle their state.
 
 4) we learn react dev tools

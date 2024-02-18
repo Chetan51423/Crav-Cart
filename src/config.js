@@ -261,7 +261,7 @@
 //     }
 //   ]
 
-
+export const FETCH_MENU_RESTAURANT = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.4525239&lng=73.8702498&restaurantId=";
 export const CloudinaryImage_Url = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 export const Restaurant= [
     {

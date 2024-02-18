@@ -16,9 +16,9 @@ const RestaurantCard =({cloudinaryImageId,name, costForTwo,avgRating
              alt="Image"/>
              
             <div className="cardData">
-                <h2>{name}</h2>
-                <h3>{costForTwo}</h3>
-                <h4>{avgRating
+                <h2 class="cardData-text">{name}</h2>
+                <h3 class="cardData-text">{costForTwo}</h3>
+                <h4 class="cardData-text">{avgRating
 }⭐🔥</h4>
                 <h4></h4>
             </div>
