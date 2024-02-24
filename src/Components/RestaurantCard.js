@@ -7,16 +7,16 @@ const RestaurantCard =({cloudinaryImageId,name, costForTwo,avgRating
     
     return (
        
-        <div className="card">
+        <div className="w-56 hover:w-60 m-9 shadow-xl hover:2xl">
             {/* <img src={ "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId }
              alt="Image"/> */}
              {/* <img src={ CloudinaryImage_Url + cloudinaryImageId }
              alt="Image"/> */}
-             <img src={ `${CloudinaryImage_Url}${cloudinaryImageId}` }
+             <img  className="rounded-lg"  src={ `${CloudinaryImage_Url}${cloudinaryImageId}` }
              alt="Image"/>
              
-            <div className="cardData">
-                <h2 class="cardData-text">{name}</h2>
+            <div className="font-medium bg-pink-50">
+                <h2 class="font-bold ">{name}</h2>
                 <h3 class="cardData-text">{costForTwo}</h3>
                 <h4 class="cardData-text">{avgRating
 }⭐🔥</h4>

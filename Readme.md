@@ -795,6 +795,19 @@ import {lazy, Suspense } from 'react'
  - we have to configuration of tailwindcss
  - in content:["./src/**/*.{html,js}",]
 
+ ### features that tailwind CSS provides us 
+ 
+ > CSS on the go (css in the same file)
+ > Reusability
+ > less bundle size
+ > Flexible UI (customizable / where other UI libraries do not provide )
+
+ > [!NOTE]
+ > we can use cdn links at our HTML
+ > it will work with aything (html/frameworks/etc)
+ > when we add tailwind css to aover project it will remove the default css
+ > 
+
 ```javascript
 //how to install taildwind css and postcss pa ckage 
 npm install -D tailwindcss postcss
@@ -803,6 +816,14 @@ npm install -D tailwindcss postcss
 npx tailwind init
 ```
 
+#### when we do tailwind init
+
+> once we do tailwind init we get the configuration file  (tailwind.config.js)
+> after that we need to configure out postcss with a postcss.rc file like once we have done to configure babel using babel.rc
+> the postcss congiguration is to let know our bundlers that we are using tailwind css classes so compile those classes.
+> while our bundelers is building a development or production build so do compile our tailwind files.........for this thing we need postcss.rc file 
+
+
 5) what is postcss
 -> while using tailwind css we need to work with classes
 -> postcss is the package which will tell bable that those are the classes of tailwindcss compile them to normal css.
@@ -810,6 +831,19 @@ npx tailwind init
 -> we have to store some configuration here 
 
 6) Code inside our css will only have 3 line that tailwind provides us.
+
+7) entire process at once
+
+> install tailwind and postcss as devdependencies
+> next do tailwind init
+> then configure tailwind.config.js --> tell tailwind what files to scan
+> next configure .postcss.rc file
+> then put 3 classes provided by tailwind in out main css file (     @tailwind base
+      @tailwind componets,
+      @tailwind utilities
+)
+
+Note:-> to make our process smooth nad the process of remembering tailwind css classes whe have to add one extension called ("Tailwind css IntelliSense")
 
 <!-- =================================================================================================================================================== -->
 
@@ -823,7 +857,7 @@ Note:-> we will be discussing about data layer and UI layer in this chapter.
 ->it goes in a chaning and increase if e have larger application 
 
 >![DIsadvanteage of props drilling]
-> it makes out code messy // if props drilling make the chain of lest say more than 5 then we might end up with passing props to childs even they didn't need it.
+> it makes out code messy // if props drilling make the chain of let's say more than 5 then we might end up with passing props to childs even they didn't need it.
 > If we made change in one of the prop ...then it will made all the child components of parent to render again to which we have pass our props.
 
 2) How can we pass props to our parent
@@ -851,10 +885,143 @@ the component view of react code
  - mobex
  - flux
  - redus store
--> react providetheir own tool called react context to store all the state variable globally
+-> react provide their own tool called react context to store all the state variable globally
 
 >![Note]
 > We will never store the data inside local storage.
 > it is very costly to update  the data when it is store at local storage. 
 > if we wants our data to visible everywhere and every component get its acces then we can store this state variables to react central space called --> "react context"
 
+
+
+# Lecture 14
+
+Some concepts in Redux toolkit / react-redux
+   - store
+   - slice
+   - action
+   - dispatch
+   - reducer (function)
+   - selector  (when we have to read from cart )
+
+
+we will have store
+ - in store we have slice / logical separation for each section
+ - we can have as multiple slice 
+ - a slice is a small portion of your store
+ - we can have only one store 
+ - it is the central space which holds the state of diff variables
+ - our component cannot directly modify the store
+ - for that we have to dispatch an action
+ - that action will call a function
+ - that function will modify our cart
+ - the function is known as reducer
+ - we use selector (hook) to read from redux store
+
+ Note:-> if we hit any button in UI -> it dispatch an action -> that calls a reducer function -> which modifies/update the slice of redux store -> we use selector to read from store
+
+
+ > subscribe to the store
+  - when we are reading from the store using hook called selector  --> this terminology is called as subscribing ( xyz component is subscribing to store)
+
+
+#### time to install redux toolkit library 
+
+> command : 
+> npm install @reduxjs/toolkit  --> main core library
+> npm install react-redux
+
+### process
+
+> create store 
+> provider it to the application
+> create the slice you want to add in store of any name 
+> write the name / inital state / reducers fro that sclice 
+> now export the reducer and the action from that sclice
+> then its time to a create an add button to subscribe to our slice
+> subscribe to the slice to 
+> this will dispatch an action 
+> and the reducer function will modify the cart
+
+```javascript
+
+   import {configureStore} from "@reduxjs/toolkit"
+   import cartSlice from "./cartSlice";  // by default cartSlice was exporting reducer by default --> so here we also get the reducer
+
+   const store = configureStore({
+      cart: cartSlice,
+   });
+
+   export default store;
+
+```
+
+> create cart slice
+
+```javascript
+   import {createSlice} from "@reduxjs/toolkit"
+   const cartSlice = createSlice({
+      name:'cart',
+
+      initialState:{ items:[]},
+
+      reducers:{
+         addItem:(state, action)=>{ state.items.push(action.payload)},
+         deleteItem:(state, action)=>{ state.items.pop()},
+         clearCart:(state)=>{ state.items = []}  
+      }
+   })
+
+   export const { addItem, deleteItem, clarCart} = cartSlice.actions;
+   export default cartSlice.reducer;
+
+```
+
+> now subscribe the store using useSlector
+
+```javascript
+
+ // in header.js
+   import {useSelector} from "react-redux"
+   const cartItems = useSelector(store.cart.items);
+```
+
+> dispatch an action
+  - create a button 
+  - onclicking that button will invoke the callback function
+  - that call back function will invoke another function dispatch()
+  - we will use dispatch from { useDispatch() } hook
+  - that useDispatch hook will be imported from react-redux
+  - dipatch function will dispatch an action 
+  that action will be imported from cartSlice as named import 
+  - the dispatch function will perform the the action (adding/deleting/ clearing cart) and return the result / current state of store
+
+```javascript
+
+   import { useDispatch } from "react-redux"
+   import { addItem } from "./utils/cartSlice"
+
+
+   const dispatch = useDispatch();
+   const handleAddItem = ()=>{
+      dispatch(addItem("Item_Name_to_add"))
+   }
+   <button onclic(()=> handleAddItem())  >Add</button>
+```
+  
+
+> who to connect the store to our app 
+   - we can connect the sore to whole app or any partion of app
+   - we can provide the store to whole app using " {provider}"
+   - we can import {Provider} from " react-redux "
+   - basically we have to write the whole code inside the <Provider>.........code........</Provider> 
+   - if we wants to provide store to whole app then write the main component inside the <Provider></Provider> or any portion of code to which we wants to provide the store
+
+```javascript
+   
+   import {Provider} from "react-redux"
+   import store from "../utils/store"
+
+   <Provider store = {store}> .....main comp code ....</Provider>
+
+```

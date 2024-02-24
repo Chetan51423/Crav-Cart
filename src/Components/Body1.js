@@ -33,9 +33,9 @@ const Body = () =>
     return <h1 style={{textAlign:"center", margin:"100px auto 100px"}}>🔴Offline, Please check your Internet ! 🔴</h1>
   }
   return restaurants.length===0 ? (<Shimmer/>) : (
-      <>
-        <div className="search-container">
-          <input type="search" className="search-input" placeholder="Search" 
+      <div className="flex-col justify-center mx-auto">
+        <div className="bg-pink-100 m-3 h-16 flex items-center justify-center shadow-lg rounded">
+          <input type="search" className="p-1 rounded-md border-violet-500 font-semibold shadow-lg hover:shadow-2xl" placeholder="Search" 
             value={searchInput} 
             onChange ={(e)=>
             {
@@ -43,7 +43,7 @@ const Body = () =>
             }}
           />
           
-          <button className="search-btn" onClick={()=>
+          <button className="m-2 px-3 py-1 bg-purple-500 hover:bg-purple-600 font-medium rounded-xl shadow hover:shadow-2xl" onClick={()=>
             {
               const data = filterData(searchInput,allRestaurants);
               setRestaurants(data);
@@ -52,7 +52,7 @@ const Body = () =>
           > Search 
           </button>
         </div>
-        <div className="body_">
+        <div className="flex flex-wrap justify-between ">
           {/* The best way is here😎 we can use the map() to map all the object inside RestaurantList */}
           {
             restaurants.map((restaurant)=>
@@ -63,7 +63,7 @@ const Body = () =>
           }
             
         </div>   
-      </>
+      </div>
   )
 }
 
