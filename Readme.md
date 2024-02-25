@@ -936,8 +936,8 @@ we will have store
 > create store 
 > provider it to the application
 > create the slice you want to add in store of any name 
-> write the name / inital state / reducers fro that sclice 
-> now export the reducer and the action from that sclice
+> write the name / inital state / reducers to that slice 
+> now export the reducer and the action from that slice
 > then its time to a create an add button to subscribe to our slice
 > subscribe to the slice to 
 > this will dispatch an action 

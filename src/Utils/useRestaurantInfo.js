@@ -12,7 +12,7 @@ export const useRestaurantInfo = (id)=>
     async function getRestaurantInfo(id){
         const data = await fetch(`${FETCH_MENU_RESTAURANT}${id}`);
         const json = await data.json()
-        setRestaurantInfo(json.data?.cards[0]?.card?.card?.info)
+        setRestaurantInfo(json.data?.cards[2]?.card?.card?.info)
         setloading(false)
     }
     return {restaurantInfo,loading};

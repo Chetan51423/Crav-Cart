@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import { useSelector } from "react-redux"
+// import Store from "../Utils/Store" 
 
 const Website_title =()=>
 {
@@ -9,6 +11,7 @@ const Website_title =()=>
 }
 const Header = () =>
 {
+    const cartItems = useSelector(Store => Store.cart.items)
     return  (
         
         <div>
@@ -26,7 +29,7 @@ const Header = () =>
                         <li className="p-3 font-semibold"><Link to="/About">About</Link></li>
                         <li className="p-3 font-semibold"><Link to="/Contct_Us">Contct_Us</Link></li>
                         <li className="p-3 font-semibold"><Link to="/Instamart">Instamart</Link></li>
-                        <li className="p-3 font-semibold"><Link to="/Instamart">Cart</Link></li>
+                        <li className="p-3 font-semibold"><Link to="/Cart">Cart-{cartItems.length}</Link></li>
                     </ul>
                     
                 </div>

@@ -9,6 +9,9 @@ import Error from "./Components/Error"
 import Contct_Us from "./Components/Contct_Us"
 import RestaurantInfo from "./Components/RestaurantInfro"
 import Shimmer from "./Components/Shimmer"
+import { Provider } from "react-redux"
+import Store from "./Utils/Store"
+import Cart from "./Components/Cart"
 
 
 
@@ -487,11 +490,14 @@ const Applayout = ()=>
         */
 
     // Here comes Reacts Fragments --> component can have only one partent element to avoid the errors we use react fragments
-       <>
-       <Header/>
-       <Outlet/>
-       <Footer/>
-       </>
+    <Provider store={Store}>
+       <div className="flex flex-col min-h-screen">
+            <Header/>
+            <Outlet/>
+            <Footer/>
+       </div>
+    </Provider>
+       
     )
 }
 
@@ -524,6 +530,11 @@ const appRouter = createBrowserRouter([
             {
                 path:"/Instamart",
                 element:<Suspense fallback={<Shimmer/>}><Instamart/></Suspense>,
+                errorElement:<Error/>
+            },
+            {
+                path:"/Cart",
+                element:<Cart/>,
                 errorElement:<Error/>
             }
         ]
