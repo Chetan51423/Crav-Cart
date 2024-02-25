@@ -33,9 +33,9 @@ const Body = () =>
     return <h1 style={{textAlign:"center", margin:"100px auto 100px"}}>🔴Offline, Please check your Internet ! 🔴</h1>
   }
   return restaurants.length===0 ? (<Shimmer/>) : (
-      <div className="flex-col justify-center mx-auto">
+      <div className="flex-col justify-center items-center">
         <div className="bg-pink-100 m-3 h-16 flex items-center justify-center shadow-lg rounded">
-          <input type="search" className="p-1 rounded-md border-violet-500 font-semibold shadow-lg hover:shadow-2xl" placeholder="Search" 
+          <input type="search" className="p-1 w-72 rounded-md border-violet-500 font-semibold shadow-lg hover:shadow-2xl" placeholder="Search" 
             value={searchInput} 
             onChange ={(e)=>
             {
@@ -52,7 +52,8 @@ const Body = () =>
           > Search 
           </button>
         </div>
-        <div className="flex flex-wrap justify-between ">
+        
+        <div className="w-3/4 flex flex-wrap justify-evenly m-auto">
           {/* The best way is here😎 we can use the map() to map all the object inside RestaurantList */}
           {
             restaurants.map((restaurant)=>

@@ -21,15 +21,15 @@ const Header = () =>
                 </div> 
                 <div className="flex items-center">
                     <Website_title/>
-                    <img className="h-25 w-25 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0svnqn9Anh0RAqVtyuCk-RMSYuJ5oCIxyxQ&usqp=CAU" alt="" />
+                    <img className="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0svnqn9Anh0RAqVtyuCk-RMSYuJ5oCIxyxQ&usqp=CAU" alt="" />
                     </div>   
-                <div className="flex align-middle">
+                <div className="flex">
                     <ul className="flex">
-                        <li className="p-3 font-semibold"><Link to="/">Home</Link></li>
-                        <li className="p-3 font-semibold"><Link to="/About">About</Link></li>
-                        <li className="p-3 font-semibold"><Link to="/Contct_Us">Contct_Us</Link></li>
-                        <li className="p-3 font-semibold"><Link to="/Instamart">Instamart</Link></li>
-                        <li className="p-3 font-semibold"><Link to="/Cart">Cart-{cartItems.length}</Link></li>
+                        <li className="text-xl  p-3 font-semibold"><Link to="/">Home</Link></li>
+                        <li className="text-xl  p-3 font-semibold"><Link to="/About">About</Link></li>
+                        <li className="text-xl  p-3 font-semibold"><Link to="/Contct_Us">Contct_Us</Link></li>
+                        <li className="text-xl  p-3 font-semibold"><Link to="/Instamart">Instamart</Link></li>
+                        <li className="text-xl  p-3 font-semibold"><Link to="/Cart">Cart-{cartItems.length}</Link></li>
                     </ul>
                     
                 </div>
