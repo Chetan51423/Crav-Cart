@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 const Website_title =()=>
 {
     return (
-        <h2 className="p-10 font-medium ">Aunty's Kitchen</h2>
+        <h2 className="p-5 lg:text-5xl sm:text-4xl font-medium ">Aunty's Restro</h2>
     )
     
 }
@@ -21,15 +21,15 @@ const Header = () =>
                 </div> 
                 <div className="flex items-center">
                     <Website_title/>
-                    <img className="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0svnqn9Anh0RAqVtyuCk-RMSYuJ5oCIxyxQ&usqp=CAU" alt="" />
+                    <img className="lg:size-48 sm:size-40 rounded-3xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0svnqn9Anh0RAqVtyuCk-RMSYuJ5oCIxyxQ&usqp=CAU" alt="" />
                     </div>   
                 <div className="flex">
                     <ul className="flex">
-                        <li className="text-xl  p-3 font-semibold"><Link to="/">Home</Link></li>
-                        <li className="text-xl  p-3 font-semibold"><Link to="/About">About</Link></li>
-                        <li className="text-xl  p-3 font-semibold"><Link to="/Contct_Us">Contct_Us</Link></li>
-                        <li className="text-xl  p-3 font-semibold"><Link to="/Instamart">Instamart</Link></li>
-                        <li className="text-xl  p-3 font-semibold"><Link to="/Cart">Cart-{cartItems.length}</Link></li>
+                        <li className="lg:text-xl sm:text-sm p-3 font-semibold"><Link to="/">Home</Link></li>
+                        <li className="lg:text-xl sm:text-sm p-3 font-semibold"><Link to="/About">About</Link></li>
+                        <li className="lg:text-xl sm:text-sm p-3 font-semibold"><Link to="/Contct_Us">Contct_Us</Link></li>
+                        <li className="lg:text-xl sm:text-sm p-3 font-semibold"><Link to="/Instamart">Instamart</Link></li>
+                        <li className="lg:text-xl sm:text-sm p-3 font-semibold"><Link to="/Cart">Cart-{cartItems.length}</Link></li>
                     </ul>
                     
                 </div>
