@@ -15,3 +15,7 @@ export const theme = {
   extend: {},
 };
 export const plugins = [];
+
+export const variants = {
+  extends:{ animation: ['hover', 'focus'], },
+}

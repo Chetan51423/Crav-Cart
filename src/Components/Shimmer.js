@@ -6,8 +6,8 @@ const Shimmer = () => {
   return (
     <div className="flex flex-col"> 
       <Shimmer_searchBar/>
-      <div className="flex flex-wrap">
-        {
+      <div className="w-3/4 flex flex-wrap justify-evenly m-auto">
+        { 
         arr.map(()=>{
           return <ShimmerCard/>;
         })

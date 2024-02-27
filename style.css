@@ -2,4 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes shimmer {
+    from {transform: translateX(-20%);}
+    to {transform: translateX(1500%);}
+}
 

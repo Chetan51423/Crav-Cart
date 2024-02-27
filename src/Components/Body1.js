@@ -29,13 +29,14 @@ const Body = () =>
   const online = useOnline();
 
   if(!online)
+
   {
     return <h1 style={{textAlign:"center", margin:"100px auto 100px"}}>🔴Offline, Please check your Internet ! 🔴</h1>
   }
   return restaurants.length===0 ? (<Shimmer/>) : (
       <div className="flex-col justify-center items-center">
-        <div className="bg-pink-100 m-3 h-16 flex items-center justify-center shadow-lg rounded">
-          <input type="search" className="p-1 w-72 rounded-md border-violet-500 font-semibold shadow-lg hover:shadow-2xl" placeholder="Search" 
+        <div className="bg-pink-200 m-3 h-16 flex items-center justify-center shadow-2xl rounded">
+          <input type="search" className="p-1 w-72 rounded-md bg-slate-50 hover:bg-slate-100 font-semibold  " placeholder="Search" 
             value={searchInput} 
             onChange ={(e)=>
             {
@@ -43,7 +44,7 @@ const Body = () =>
             }}
           />
           
-          <button className="m-2 px-3 py-1 bg-purple-500 hover:bg-purple-600 font-medium rounded-xl shadow hover:shadow-2xl" onClick={()=>
+          <button className="m-2 px-3 py-1 bg-purple-500 hover:bg-purple-700 font-medium rounded-xl shadow hover:shadow-2xl" onClick={()=>
             {
               const data = filterData(searchInput,allRestaurants);
               setRestaurants(data);

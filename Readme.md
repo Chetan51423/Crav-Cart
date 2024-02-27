@@ -1025,3 +1025,206 @@ we will have store
    <Provider store = {store}> .....main comp code ....</Provider>
 
 ```
+
+
+
+
+
+# Lecture 15  React Testing library
+
+### we are going to setup testing framework from  scratch
+
+1) why do we need test cases
+-> to make our code intact
+-> if more than one developer woking on react application 
+-> to ensure that their code would not break the working of other components
+-> test help us to ensure this
+-> testing increase the maintainability of our code
+
+### test drven development
+
+-> we generally write test cases before writting code project
+-> it is best practice
+-> when you apt test driven development will make the development 
+-> although it make the development process cleaner but time consuming
+
+### Types of Testing
+
+-> Manual Testing
+-> Automated Testing
+  -> code testing code
+  -> selenium - tool to do automated testing
+-> End to end testinf
+  -> it covers entire user journey
+-> Headless browser
+  -> we can execute the test cases faster
+  -> the browser will not have have UI
+-> Unit testing
+  -> small component unit testing
+  -> mojor job of developter
+-> Integration testing
+  -> here we check the integration between the components
+-> Regression testing 
+-> performance testing
+-> smoke Testing
+
+>[!Note] 
+> enzyme - old way for testing library
+> Headless browsers
+> Unit testing
+> Integration testing
+> Automated Testing
+> Testing is similatr to development 
+> like development we need to give time to learn testing / mindset
+
+
+### Zest  (delightful javascript testing framework)
+
+-> It is framework for testing
+-> react testing library uses jest-framework behind the scene
+
+
+### Let's get started with React Testing library 
+
+1) install react testing library
+```javascript
+   npm install --save-dev @testing-library/react
+```
+
+2) install jest
+>[!NOTE]
+> please install lettest version of jest
+```javascript
+   npm install --save-dev zest
+```
+
+3) configure zest
+
+-> create a zest.config file
+-> or we can initilize zest using
+
+>[!NOTE]
+> we have to configure the jest by creating the jest.configure file
+> there are two ways to do it
+> 1st is to create it manually
+> 2nd is to using terminal command --> npx jest --init
+> we use npx instead of npm because we just have to initialize it only once
+
+```javascript
+   jest --init
+
+   // step 2 is to npm run test
+   npm run test 
+   // got one error for jest-environment-jsdom package error
+   npm i -D  jest-environment-jsdom
+
+```
+4) Install jest-environment-json as above 
+
+```javascript
+   npm i -D  jest-environment-jsdom
+```
+
+5) Create test folder -- create first test 
+
+-> whenever we run the test these jest will look for this __test__ foder
+-> this folder is also called as dunder (__ = dunder  )
+-> create the first test file inside it with name  " file_name.test.js "
+
+```javascript 
+import { sum } from "../Sum"
+test("Check sum of 2 positive numbers", ()=>{
+   expect(sum().toBe(5))
+})
+```
+>[!ERROR] 1
+> while running this code I got the error called " jest encountered an unexped token"
+> this is due to we have imported the js file except any folder
+> to correct we have to configure babel by add some configuration so that jest will support the file import 
+> we will get the jest-babel congin on "jest-babel" page
+> after installing this plugin in .babelrc file the error will be no more
+> then simply run "npm run test"
+
+```javascript
+// npm install below
+
+npm install --save-dev babel-jest @babel/core @babel/preset-env
+
+// babel.config.js file will contain the below configuration
+
+module.exports = {
+  presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
+};
+```
+
+6) gitignore my coverage report 
+
+-> once we run our test jest will ren the specified file (sum.test.js)
+-> jest will also scan other files 
+-> so we will have all files to save the changes because of coverage file
+-> we can gitignore the covergae file to avoid this
+
+7) start Unit testing
+
+-> write test cases for header
+-> write test case for body
+-> once we write the test case for header and render header inside the expect().toBe()
+we will get the error as
+
+>[!ERROR] 2 
+> jsx is not enabled yet
+> Support for the experimental syntax 'jsx' isn't currently enabled
+-> we can solve this error using another babel congiguration called 
+>[!Note]
+```javascript
+   "presets":[["@babel/preset-react",{"runtime":"automatic"}]]
+```
+
+
+>[!NOTE]  
+> while testing we have some concepts in mind 
+> we are not running our test on browser
+> we are running it on jsdom  -> it do not requires browser
+> it do not have root like the browser usually has
+> react testing library provides us a function called "render()"
+> this render function will create the small container/similar to browser which helps us to render the  components
+
+>[!ERROR] 3
+> now it gives error for the png image that is used as logo 
+> jest will only knows js code it didn't understand other that js
+> we will configure jest configuration of moduleNameMapper to below 
+> it basicall tells jest that when ever you meet files as below then use specific .js file which we just made to trick jest 
+> that jes file ony contains string (dummy string)
+
+```javscript
+moduleNameMapper: { "\\.(jpg|png|svg)$":"../mocks/dummyLogo.js"},
+```
+
+
+>[!ERROR] 4
+> this error is says that we need to wrap our head component which we are rendering during test it need to wrap inside <provider></provider>
+> this occures because we are not rendering our application in browser
+> we are just rendering it for testing
+> we will wrap the header component inside procvide 
+> we will also pass the store as props
+
+>[!ERROR] 5
+> now we get the error in <link> 
+> as we are only running in restricted environment not on browser so we have to provide it what we have provided for routing 
+> like { CreateBrowserRouter, RputerProvider}
+> we have to fix it with importing something called as 
+
+ ```javascript
+ import { StaticRouter } from "react-router-dom/server"
+ ``` 
+
+
+ ### FInally we are able to passes the test case
+
+ [!NOTE]
+ > we got 4 errors untill now
+ > error 1: jest encountered an unexped token
+ > error 2: Support for the experimental syntax 'jsx' isn't currently enabled
+ > error 3: now it gives error for the png image that is used as logo
+ > error 4: this error is says that we need to wrap our head component which we are rendering during test it need to wrap inside <provider></provider>
+ > error 5: now we get the error in <link> 
