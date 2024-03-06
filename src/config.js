@@ -456,4 +456,4 @@ export const Restaurant= [
   ]
 
 
-  https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D18.4525239%26lng%3D73.8702498%26restaurantId%3D
+  
