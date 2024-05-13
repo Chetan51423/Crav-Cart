@@ -6,6 +6,8 @@ import {useRestaurantInfo}  from "../Utils/useRestaurantInfo.js"
 import { addItem } from '../Utils/CartSlice.js'
 import { useDispatch } from 'react-redux'
 
+import { toast } from 'react-toastify';
+
 const RestaurantInfo=()=>{
 
     const param = useParams();
@@ -14,9 +16,22 @@ const RestaurantInfo=()=>{
 
     const dispatch = useDispatch();
     const handleAdd = ()=>{
-        dispatch(addItem(restaurantInfo))
+        dispatch(addItem(restaurantInfo));
+        toast.success('Item Added Successfully', {
+            position: "top-right",
+            autoClose:2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            
+            });
 
     }
+
+    // const notify = () => toast("Item Added Successfull ");
     
     return !restaurantInfo ? <ShimmerCard/> : (
         <div className="flex justify-center">
@@ -38,7 +53,11 @@ const RestaurantInfo=()=>{
                                 </ul>
                             </div>
                             <div>
-                                <button className="px-5 py-2 bg-green-400 rounded-lg shadow-2xl" onClick={()=>handleAdd()}> Add to cart</button>
+                                <button className="px-5 py-2 bg-green-400 rounded-lg shadow-2xl" onClick={()=>{
+                                    handleAdd();
+                                    // notify
+
+                                    }}> Add to cart</button>
                             </div>
                         </div>
                     </div>

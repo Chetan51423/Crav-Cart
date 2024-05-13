@@ -13,6 +13,9 @@ import { Provider } from "react-redux"
 import Store from "./Utils/Store"
 import Cart from "./Components/Cart"
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Instamart = lazy(()=>import("./Components/Instamart"))
@@ -496,6 +499,20 @@ const Applayout = ()=>
             <Outlet/>
             <Footer/>
        </div>
+       <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        
+       />
+
     </Provider>
        
     )

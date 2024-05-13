@@ -31,7 +31,7 @@ const Header = () =>
                         <li className="lg:text-xl sm:text-sm p-3 font-semibold hover:bg-orange-300 rounded-3xl"><Link to="/About">About</Link></li>
                         <li className="lg:text-xl sm:text-sm p-3 font-semibold hover:bg-orange-300 rounded-3xl"><Link to="/Contct_Us">Contct_Us</Link></li>
                         <li className="lg:text-xl sm:text-sm p-3 font-semibold hover:bg-orange-300 rounded-3xl"><Link to="/Instamart">Instamart</Link></li>
-                        <li className="lg:text-xl sm:text-sm p-3 font-semibold hover:bg-orange-300 rounded-3xl"><Link to="/Cart">Cart-{cartItems.length}</Link></li>
+                        <li className="lg:text-xl sm:text-sm p-3 font-semibold hover:bg-orange-300 rounded-3xl"><Link to="/Cart">Cart-<span className="bg-orange-300 p-2 rounded-xl">{cartItems.length}</span></Link></li>
                     </ul>
                     
                 </div>

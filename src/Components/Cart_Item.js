@@ -1,7 +1,37 @@
  import { useSelector } from "react-redux";
  import {CloudinaryImage_Url} from "../config"
+ import { deleteItem } from '../Utils/CartSlice.js'
+import { useDispatch } from 'react-redux'
+
+import {useParams} from 'react-router-dom'
+import {useRestaurantInfo}  from "../Utils/useRestaurantInfo.js"
+import { toast } from 'react-toastify';
+
  const Cart_Item =({name,cloudinaryImageId,areaName, city,locality, avgRating, costForTwoMessage})=>{
     
+
+    const param = useParams();
+    const {id} = param;
+    const restaurantInfo = useRestaurantInfo(id).restaurantInfo;
+
+
+    const dispatch = useDispatch();
+    const handleDelete = ()=>{
+        dispatch(deleteItem(name));
+        toast.success('Item Deleted Successfully', {
+            position: "top-right",
+            autoClose:2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            
+            });
+
+    }
+
     return(
         <div className="flex justify-center">
             <div className="m-8 p-8 bg-orange-300 rounded-2xl shadow-2xl" >
@@ -22,7 +52,7 @@
                                 </ul>
                             </div>
                             <div>
-                                <button className="mt-2 px-5 py-2 bg-red-400 rounded-lg shadow-2xl" onClick={()=>handleAdd()}>Delete from cart</button>
+                                <button className="mt-2 px-5 py-2 bg-red-400 rounded-lg shadow-2xl" onClick={()=>handleDelete()}>Delete from cart</button>
                             </div>
                         </div>
                     </div>

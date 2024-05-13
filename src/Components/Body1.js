@@ -20,12 +20,15 @@ const Body = () =>
 
   async function getRestaurants()
   {
-    const d2 = await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D18.4525798%26lng%3D73.8702649%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING");
+    const d2 = await fetch("https://crossorigin.me/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4525239&lng=73.8702498&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json2 = await d2.json();
     seaAllRestaurants(json2.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setRestaurants(json2.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
-
+  
+// https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4525239&lng=73.8702498&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING
+// const d2 = await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D18.4525798%26lng%3D73.8702649%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING");
+//     const json2 = await d2.json();
   const online = useOnline();
 
   if(!online)
